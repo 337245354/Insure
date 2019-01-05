@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="main" class="site_title"><i class="fa fa-paw"></i> <span>APP BMS</span></a>
+              <a href="${pageContext.request.contextPath }/manager/backend/main" class="site_title"><i class="fa fa-paw"></i> <span>APP BMS</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -63,13 +63,19 @@
                   <li><a><i class="fa fa-home"></i> APP管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="${pageContext.request.contextPath }/manager/backend/app/list">APP审核</a></li>
-                      <li><a href="${pageContext.request.contextPath }/manager/backend/category">APP分类管理</a></li>
-                      <li><a href="${pageContext.request.contextPath }/manager/backend/ad">广告推广</a></li>
+                      <li><a href="javascript:;">广告推广</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">开发者管理</a></li>
+                      <li><a href="javascript:;">后台用户管理</a></li>
+                      <li><a href="javascript:;">开发者资质审核</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bug"></i> 基础数据维护 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="javascript:;">数据字典</a></li>
+                      <li><a href="javascript:;">APP分类管理</a></li>
                     </ul>
                   </li>
                 </ul>

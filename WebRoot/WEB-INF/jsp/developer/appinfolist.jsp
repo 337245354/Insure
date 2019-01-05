@@ -1,16 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="common/header.jsp"%>
-<style>
-<!--
-.tooltip{
-	z-index:9999999999;
-}
--->
-</style>
 <div class="clearfix"></div>
 <div class="row">
-
 	<div class="col-md-12">
 		<div class="x_panel">
 			<div class="x_title">
@@ -135,46 +127,39 @@
 								<tr role="row">
 									<th class="sorting_asc" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 70px;" aria-label="First name: activate to sort column descending"
+										aria-label="First name: activate to sort column descending"
 										aria-sort="ascending">软件名称</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 10px;"
 										aria-label="Last name: activate to sort column ascending">
 										APK名称</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 90px;"
 										aria-label="Last name: activate to sort column ascending">
 										软件大小(单位:M)</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 50px;"
 										aria-label="Last name: activate to sort column ascending">
 										所属平台</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 170px;"
 										aria-label="Last name: activate to sort column ascending">
 										所属分类(一级分类、二级分类、三级分类)</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 30px;"
 										aria-label="Last name: activate to sort column ascending">
 										状态</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 30px;"
 										aria-label="Last name: activate to sort column ascending">
 										下载次数</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 64px;"
 										aria-label="Last name: activate to sort column ascending">
 										最新版本号</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
-										style="width: 170px;"
+										style="width: 124px;"
 										aria-label="Last name: activate to sort column ascending">
 										操作</th>
 								</tr>

@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="common/header.jsp"%>
-<style>
-	#logoPic img{width:100px;}
-</style>
 <div class="clearfix"></div>
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2>修改APP最新版本信息 <small>当前用户：${devUserSession.devName}</small></h2>
+        <h2>修改APP最新版本信息 <i class="fa fa-user"></i><small>${devUserSession.devName}</small></h2>
             <div class="clearfix"></div>
       </div>
       <div class="x_title">

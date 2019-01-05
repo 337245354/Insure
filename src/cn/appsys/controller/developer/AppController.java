@@ -7,8 +7,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.ws.rs.PathParam;
-
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -22,8 +20,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSONArray;
 import com.mysql.jdbc.StringUtils;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Appinfo;
-
 import cn.appsys.pojo.AppCategory;
 import cn.appsys.pojo.AppInfo;
 import cn.appsys.pojo.AppVersion;

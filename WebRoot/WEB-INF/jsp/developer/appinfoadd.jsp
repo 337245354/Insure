@@ -6,7 +6,7 @@
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2>新增APP基础信息 <small>当前用户：${devUserSession.devName}</small></h2>
+        <h2>新增APP基础信息 <i class="fa fa-user"></i><small>${devUserSession.devName}</small></h2>
              <div class="clearfix"></div>
       </div>
       <div class="x_content">
@@ -130,6 +130,7 @@
             <div class="col-md-6 col-md-offset-3">
               <button id="send" type="submit" class="btn btn-success">保存</button>
               <button type="button" class="btn btn-primary" id="back">返回</button>
+              <br/><br/>
             </div>
           </div>
         </form>

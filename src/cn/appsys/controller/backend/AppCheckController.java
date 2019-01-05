@@ -53,7 +53,7 @@ public class AppCheckController {
 		logger.info("getAppInfoList -- > queryCategoryLevel1: " + _queryCategoryLevel1);
 		logger.info("getAppInfoList -- > queryCategoryLevel2: " + _queryCategoryLevel2);
 		logger.info("getAppInfoList -- > queryCategoryLevel3: " + _queryCategoryLevel3);
-		logger.info("getAppInfoList -- > queryFlatformId: " + _queryFlatformId);
+		logger.info("getAppInfoList -pom- > queryFlatformId: " + _queryFlatformId);
 		logger.info("getAppInfoList -- > pageIndex: " + pageIndex);
 		
 		List<AppInfo> appInfoList = null;

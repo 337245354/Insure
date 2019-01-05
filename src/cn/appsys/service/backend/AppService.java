@@ -26,7 +26,7 @@ public interface AppService {
 										@Param(value="from")Integer currentPageNo,
 										@Param(value="pageSize")Integer pageSize)throws Exception;
 	/**
-	 * 查询出待审核的APP数量
+	 * 查询出待审核（status=1）的APP数量
 	 * @param querySoftwareName
 	 * @param queryCategoryLevel1
 	 * @param queryCategoryLevel2

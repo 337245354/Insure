@@ -3,16 +3,16 @@ package cn.appsys.pojo;
 import java.util.Date;
 
 public class DevUser {
-	private Integer id;
-	private String devCode;
-	private String devName;
-	private String devPassword;
-	private String devEmail;
-	private String devInfo;	
-	private Integer createdBy;
-	private Date creationDate;
-	private Integer modifyBy;
-	private Date modifyDate;
+	private Integer id;//主键id
+	private String devCode;//开发者帐号(系统登录账号)
+	private String devName;//开发者名称
+	private String devPassword;//开发者密码
+	private String devEmail;//开发者邮箱
+	private String devInfo;	//开发者简介
+	private Integer createdBy;//创建者
+	private Date creationDate;//创建时间
+	private Integer modifyBy;//更新者
+	private Date modifyDate;//更新时间
 	
 	public Integer getId() {
 		return id;
