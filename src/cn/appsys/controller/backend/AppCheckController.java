@@ -63,6 +63,8 @@ public class AppCheckController {
 		List<AppCategory> categoryLevel3List = null;
 		//页面容量
 		int pageSize = Constants.pageSize;
+
+
 		//当前页码
 		Integer currentPageNo = 1;
 		
