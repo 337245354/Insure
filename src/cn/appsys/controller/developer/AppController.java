@@ -7,7 +7,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import com.mysql.cj.util.StringUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
