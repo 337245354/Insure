@@ -15,7 +15,7 @@ import cn.appsys.service.backend.BackendUserService;
 import cn.appsys.tools.Constants;
 
 @Controller
-@RequestMapping(value="/manager")
+@RequestMapping(value="/underwriter")
 public class UserLoginController {
 	private Logger logger = Logger.getLogger(UserLoginController.class);
 	
@@ -43,7 +43,7 @@ public class UserLoginController {
 			//放入session
 			session.setAttribute(Constants.USER_SESSION, user);
 			//页面跳转（main.jsp）
-			return "redirect:/manager/backend/main";
+			return "redirect:/underwriter/backend/main";
 		}else{
 			//页面跳转（login.jsp）带出提示信息--转发
 			request.setAttribute("error", "用户名或密码不正确");
@@ -54,7 +54,7 @@ public class UserLoginController {
 	@RequestMapping(value="/backend/main")
 	public String main(HttpSession session){
 		if(session.getAttribute(Constants.USER_SESSION) == null){
-			return "redirect:/manager/login";
+			return "redirect:/underwriter/login";
 		}
 		return "backend/main";
 	}

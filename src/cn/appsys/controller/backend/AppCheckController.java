@@ -27,7 +27,7 @@ import cn.appsys.tools.Constants;
 import cn.appsys.tools.PageSupport;
 
 @Controller
-@RequestMapping(value="/manager/backend/app")
+@RequestMapping(value="/underwriter/backend/app")
 public class AppCheckController {
 	private Logger logger = Logger.getLogger(AppCheckController.class);
 	
@@ -207,7 +207,7 @@ public class AppCheckController {
 		logger.debug("appInfo =========== > " + appInfo.getStatus());
 		try {
 			if(appService.updateSatus(appInfo.getStatus(),appInfo.getId())){
-				return "redirect:/manager/backend/app/list";
+				return "redirect:/underwriter/backend/app/list";
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -65,7 +65,7 @@
 	<!-- 配置interceptors -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/manager/backend/**"/>
+			<mvc:mapping path="/underwriter/backend/**"/>
 			<mvc:mapping path="/dev/flatform/**"/>
 			<bean class="cn.appsys.interceptor.SysInterceptor"/>
 		</mvc:interceptor>
