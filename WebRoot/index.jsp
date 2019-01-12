@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>后台管理系统</title>
+    <title>知涵保险</title>
 
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath }/statics/css/bootstrap.min.css" rel="stylesheet">
@@ -26,12 +26,12 @@
 
   <body class="login">
     <div class="login_wrapper">
-      <h1>APP信息管理平台</h1>
+      <h1>保险保单管理系统</h1>
       <div>
       <a href="underwriter/login" class="btn btn-link">后台管理系统 入口</a>
       </div>
       <div>
-      <a href="dev/login" class="btn btn-link">开发者平台 入口</a>
+      <a href="dev/login" class="btn btn-link">用户 入口</a>
       </div>
     </div>
   </body>
