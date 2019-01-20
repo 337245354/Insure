@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>APP开发者平台</title>
+<title>用户填写平台</title>
 
 	<!-- Bootstrap -->
 	<link href="${pageContext.request.contextPath }/statics/css/bootstrap.min.css" rel="stylesheet">

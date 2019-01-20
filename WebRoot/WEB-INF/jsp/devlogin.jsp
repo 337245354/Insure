@@ -42,7 +42,7 @@
               </div>
               <span>${error }</span>
               <div>
-              	<button type="submit" class="btn btn-success">登     录</button>
+              	<button type="submit" class="btn btn-success">登   录</button>
               	<button type="reset" class="btn btn-default">重　填</button>
               </div>
 
