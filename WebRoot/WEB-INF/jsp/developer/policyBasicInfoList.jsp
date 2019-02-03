@@ -113,11 +113,14 @@
 
             <div class="row"></div>
             <br>
-            <div>
-                <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="text" value="2017-07-31" id="datetimepicker"  class="form_datetime" data-date-format="yyyy-mm-dd">
+            <div class="form-group">
+                <label for="dtp_input2" class="col-md-1 control-label">Date Picking</label>
+                <div class="input-group date form_date col-md-3" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
+                <input type="hidden" id="dtp_input2" value="" /><br/>
             </div>
 
 
@@ -144,3 +147,39 @@
 <%@include file="common/footer.jsp" %>
 <script src="${pageContext.request.contextPath }/statics/localjs/rollpage.js"></script>
 <script src="${pageContext.request.contextPath }/statics/localjs/appinfolist.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/statics/js/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        // language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        // language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
+</script>

@@ -22,6 +22,8 @@
 
     <!-- Custom Theme Style -->
     <link href="${pageContext.request.contextPath }/statics/css/custom.min.css" rel="stylesheet">
+    <!-- Bootstrap datetimepicker -->
+    <link href="${pageContext.request.contextPath }/statics/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
   </head>
 
   <body class="login">
