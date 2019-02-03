@@ -84,6 +84,19 @@
 										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/list">APP维护</a>
 										</li>
 									</ul></li>
+								<li><a><i class="fa fa-edit"></i> 保单管理 <span
+										class="fa fa-chevron-down"></span>
+								</a>
+									<ul class="nav child_menu">
+										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/policyBasicInfo">基本信息</a>
+										</li>
+										<li><a href="javascript:;">车险内容</a>
+										</li>
+										<li><a href="javascript:;">寿险内容</a>
+										</li>
+										<li><a href="javascript:;">总览</a>
+										</li>
+									</ul></li>
 							</ul>
 						</div>
 

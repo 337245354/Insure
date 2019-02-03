@@ -157,7 +157,12 @@ public class AppController {
 		}
 		return "developer/appinfolist";
 	}
-	
+
+	@RequestMapping(value="/policyBasicInfo")
+	public String getPolicyBasicInfoList(Model model,HttpSession session){
+		return "developer/policyBasicInfoList";
+	}
+
 	public List<DataDictionary> getDataDictionaryList(String typeCode){
 		List<DataDictionary> dataDictionaryList = null;
 		try {
