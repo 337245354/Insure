@@ -71,61 +71,33 @@
             </div>
 
             <div class="form-group">
-                <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
+                <label for="inputEmail" class="col-sm-1 control-label">车辆型号</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="车辆型号">
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
-                <label for="inputPassword" class="col-sm-2 control-label">购买者身份证号</label>
+                <label for="inputPassword" class="col-sm-2 control-label">保额赔付上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="保额赔付上限（元人民币）">
                 </div>
             </div>
             <div class="row"></div>
             <br>
-            <div>
-                <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式">
-                </div>
-            </div>
-            <div class="col-md-offset-6">
-                <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名">
-                </div>
-            </div>
-            <div class="row"></div>
-            <br>
-            <div>
-                <label for="inputEmail2" class="col-sm-1 control-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="col-md-offset-6">
-                <label for="inputPassword2" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-            </div>
-            <div class="row"></div>
-            <br>
-            <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
+            <label for="inputPassword" class="col-sm-1 control-label">可选保险</label>
             <div class="form-group col-sm-3">
                 <label class="radio-inline">
-                    <input type="radio" value="option1" name="payment">现金
+                    <input type="radio" value="option1" name="payment">车损险
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option2" name="payment">支付宝/微信
+                    <input type="radio" value="option2" name="payment">自燃险
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option3" name="payment">信用卡
+                    <input type="radio" value="option3" name="payment">玻璃险
                 </label>
             </div>
             <div class="col-md-offset-6 form-group">
-                <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
+                <label for="dtp_input2" class="col-sm-2 control-label">车辆买入时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                     <input class="form-control" size="1" type="text" value="">
@@ -143,15 +115,6 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-2">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Remember me
-                        </label>
-                    </div>
-                </div>
-            </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Sign in</button>
