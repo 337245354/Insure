@@ -126,16 +126,28 @@
             </div>
             <div class="col-md-offset-6 form-group">
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
-                <div class="input-group date form_date col-sm-6" data-date="" data-date-format="dd MM yyyy"
+                <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="16" type="text" value="">
+                    <input class="form-control" size="1" type="text" value="">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
                 <input type="hidden" id="dtp_input2" value=""/><br/>
             </div>
-
-
+            <div class="row"></div>
+            <br>
+            <div>
+                <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
+                <div class="col-sm-9">
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
+                </div>
+            </div>
+            <%--<form role="form">--%>
+                <%--<div class="form-group">--%>
+                    <%--<label for="name">文本框</label>--%>
+                    <%--<textarea class="form-control" rows="3"></textarea>--%>
+                <%--</div>--%>
+            <%--</form>--%>
 
 
 
