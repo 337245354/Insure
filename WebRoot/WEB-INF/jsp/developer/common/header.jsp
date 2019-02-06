@@ -90,9 +90,9 @@
 									<ul class="nav child_menu">
 										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/policyBasicInfo">基本信息</a>
 										</li>
-										<li><a href="javascript:;">车险内容</a>
+										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/policyCAInfo">车险内容</a>
 										</li>
-										<li><a href="javascript:;">寿险内容</a>
+										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/policyGLInfo">寿险内容</a>
 										</li>
 										<li><a href="javascript:;">总览</a>
 										</li>

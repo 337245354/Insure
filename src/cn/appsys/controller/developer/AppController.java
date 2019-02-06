@@ -163,6 +163,15 @@ public class AppController {
 		return "developer/policyBasicInfoList";
 	}
 
+	@RequestMapping(value="/policyCAInfo")
+	public String getPolicyCAInfoList(Model model,HttpSession session) { return "developer/policyCAInfoList"; }
+
+	@RequestMapping(value="/policyGLInfo")
+	public String getPolicyGLInfoList(Model model,HttpSession session) { return "developer/policyGLInfoList"; }
+
+	@RequestMapping(value="/policyOverview")
+	public String getPolicyOverview(Model model,HttpSession session) { return "developer/policyOverview"; }
+
 	public List<DataDictionary> getDataDictionaryList(String typeCode){
 		List<DataDictionary> dataDictionaryList = null;
 		try {
