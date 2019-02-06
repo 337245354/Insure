@@ -112,16 +112,21 @@
             </div>
             <div class="row"></div>
             <br>
-            <div>
-                <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="支付方式">
-                </div>
+            <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
+            <div class="form-group col-sm-3">
+                <label class="radio-inline">
+                    <input type="radio" value="option1" name="payment">现金
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="option2" name="payment">支付宝/微信
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="option3" name="payment">信用卡
+                </label>
             </div>
-
             <div class="col-md-offset-6 form-group">
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
-                <div class="input-group date form_date col-sm-3" data-date="" data-date-format="dd MM yyyy"
+                <div class="input-group date form_date col-sm-6" data-date="" data-date-format="dd MM yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
                     <input class="form-control" size="16" type="text" value="">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
