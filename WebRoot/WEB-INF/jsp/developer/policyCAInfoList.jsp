@@ -114,10 +114,11 @@
                     <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
                 </div>
             </div>
-
+            <div class="row"></div>
+            <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Sign in</button>
+                    <button type="submit" class="btn btn-default">提交</button>
                 </div>
             </div>
 
