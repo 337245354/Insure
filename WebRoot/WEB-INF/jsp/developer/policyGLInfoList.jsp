@@ -110,11 +110,11 @@
             <div class="col-md-offset-6 form-group">
                 <label for="inputPassword2" class="col-sm-2 control-label">可选保险</label>
                 <div class="form-group col-sm-3">
-                    <label class="radio-inline">
-                        <input type="radio" value="option1" name="payment">人身意外险
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option1" name="payment">人身意外险
                     </label>
-                    <label class="radio-inline">
-                        <input type="radio" value="option2" name="payment">重疾险
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="option2" name="payment">重疾险
                     </label>
                 </div>
             </div>

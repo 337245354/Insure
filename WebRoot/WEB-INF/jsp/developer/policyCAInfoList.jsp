@@ -86,14 +86,14 @@
             <br>
             <label for="inputPassword" class="col-sm-1 control-label">可选保险</label>
             <div class="form-group col-sm-3">
-                <label class="radio-inline">
-                    <input type="radio" value="option1" name="payment">车损险
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="option1" name="payment">车损险
                 </label>
-                <label class="radio-inline">
-                    <input type="radio" value="option2" name="payment">自燃险
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="option2" name="payment">自燃险
                 </label>
-                <label class="radio-inline">
-                    <input type="radio" value="option3" name="payment">玻璃险
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="option3" name="payment">玻璃险
                 </label>
             </div>
             <div class="col-md-offset-6 form-group">
