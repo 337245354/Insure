@@ -1880,14 +1880,12 @@
       <Position>13</Position>
       <Comment>是否被审核通过（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="399" parent="254" name="isPaid">
       <Position>14</Position>
       <Comment>是否已经付款（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="400" parent="254" name="createdBy">

@@ -9,13 +9,15 @@
                 <h2>
                     保单基本信息 <i class="fa fa-user"></i>
                     <small>${devUserSession.devName}
-                        &nbsp;&nbsp;&nbsp;&nbsp; 单号： XXXX &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
+                        &nbsp;&nbsp;&nbsp;&nbsp; 单号： ${InsuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
                     </small>
                 </h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <form method="post" action="list">
+                <form class="form-horizontal form-label-left" >
+                    <input type="hidden" name="id" id="id" value="${InsuredInfo.id}">
+                    <input type="hidden" name="buyerName" id="buyerName" value="${InsuredInfo.buyerName}">
                     <input type="hidden" name="pageIndex" value="1"/>
                     <ul>
                         <li>
@@ -49,7 +51,10 @@
                         </li>
                         <li>
                             <button type="" class="btn btn-primary"> 查 &nbsp;&nbsp;&nbsp;&nbsp;询</button>
+                            <button type="" class="btn btn-success"> 新 &nbsp;&nbsp;&nbsp;&nbsp;增</button>
+                            <button type="" class="btn btn-warning"> 修 &nbsp;&nbsp;&nbsp;&nbsp;改</button>
                         </li>
+
                     </ul>
                 </form>
             </div>
@@ -70,10 +75,11 @@
                 </div>
             </div>
 
-            <div class="form-group">
+        <form class="form-label-left" action="insuredinfoaddsave" method="post" enctype="multipart/form-data">
+            <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${InsuredInfo.buyerName }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
@@ -146,14 +152,17 @@
             <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">提交</button>
+                    <%--<button type="submit" class="btn btn-default">提交</button>--%>
+                        <button id="send" type="submit" class="btn btn-success">保存</button>
+                        <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
-
+        </form>
         </div>
     </div>
 </div>
 <%@include file="common/footer.jsp" %>
+<script src="${pageContext.request.contextPath }/statics/localjs/appversionmodify.js"></script>
 <script src="${pageContext.request.contextPath }/statics/localjs/rollpage.js"></script>
 <script src="${pageContext.request.contextPath }/statics/localjs/appinfolist.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>

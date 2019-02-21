@@ -22,6 +22,7 @@ public class InsuredInfo {
     private Integer modifyBy;//更新者
     private Date modifyDate;//更新时间
     private Integer versionId;//最新的版本id
+    private String comment;//备注
 
 
     public Integer getId() {
@@ -166,6 +167,14 @@ public class InsuredInfo {
 
     public void setVersionId(Integer versionId) {
         this.versionId = versionId;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
 }

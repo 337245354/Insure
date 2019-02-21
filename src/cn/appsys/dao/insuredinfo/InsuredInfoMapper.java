@@ -28,7 +28,7 @@ public interface InsuredInfoMapper {
 										@Param(value = "versionId")	Integer queryVersionId)throws Exception;
 
 
-	public AppInfo getInsuredInfo(@Param(value = "id") Integer id, @Param(value = "buyerName") String buyerName)throws Exception;
+	public InsuredInfo getInsuredInfo(@Param(value = "id") Integer id, @Param(value = "buyerName") String buyerName)throws Exception;
 
 
 	/**

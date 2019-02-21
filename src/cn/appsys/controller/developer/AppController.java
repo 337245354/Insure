@@ -7,6 +7,10 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import cn.appsys.controller.salesuser.InsuredController;
+import cn.appsys.pojo.*;
+import cn.appsys.service.developer.*;
 import com.mysql.cj.util.StringUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
@@ -20,15 +24,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSONArray;
-import cn.appsys.pojo.AppCategory;
-import cn.appsys.pojo.AppInfo;
-import cn.appsys.pojo.AppVersion;
-import cn.appsys.pojo.DataDictionary;
-import cn.appsys.pojo.DevUser;
-import cn.appsys.service.developer.AppCategoryService;
-import cn.appsys.service.developer.AppInfoService;
-import cn.appsys.service.developer.AppVersionService;
-import cn.appsys.service.developer.DataDictionaryService;
 import cn.appsys.tools.Constants;
 import cn.appsys.tools.PageSupport;
 
@@ -36,15 +31,19 @@ import cn.appsys.tools.PageSupport;
 @RequestMapping(value="/dev/flatform/app")
 public class AppController {
 	private Logger logger = Logger.getLogger(AppController.class);
+	private Logger loggerInsured = Logger.getLogger(InsuredController.class);
+
 	@Resource
 	private AppInfoService appInfoService;
+    @Resource
+    private InsuredInfoService insuredInfoService;
 	@Resource 
 	private DataDictionaryService dataDictionaryService;
 	@Resource 
 	private AppCategoryService appCategoryService;
 	@Resource
 	private AppVersionService appVersionService;
-	
+
 	@RequestMapping(value="/list")
 	public String getAppInfoList(Model model,HttpSession session,
 							@RequestParam(value="querySoftwareName",required=false) String querySoftwareName,
@@ -616,6 +615,44 @@ public class AppController {
 		}
 		return "developer/appversionmodify";
 	}
+
+
+	/**
+	 * 增加insured信息（跳转到新增insuredinfo页面）
+	 * @param InsuredInfo
+	 * @return
+	 */
+	@RequestMapping(value="/insuredinfoadd",method=RequestMethod.GET)
+	public String add(@ModelAttribute("appInfo") InsuredInfo insuredInfo){
+		return "developer/insuredinfoadd";
+	}
+
+
+
+
+    /**
+     * 保存修改后的InsuredInfo
+     * @param InsuredInfo
+     * @param session
+     * @return
+     */
+
+	@RequestMapping(value = "/insuredinfoaddsave", method = RequestMethod.POST)
+    public  String InsuredInfoaddSave(InsuredInfo insuredInfo, HttpSession session, HttpServletRequest request) {
+        String buyerName = null;
+        logger.info("get policyinfo: " + "");
+		try {
+			if(insuredInfoService.add(insuredInfo)){
+				return "redirect:/developer/policyBasicInfoList";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return "developer/policyBasicInfoList";
+    }
+
+
 	
 	/**
 	 * 修改操作时，删除文件（logo图片/apk文件），并更新数据库（app_info/app_version）
