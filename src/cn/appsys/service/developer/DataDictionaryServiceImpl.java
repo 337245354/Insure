@@ -22,4 +22,10 @@ public class DataDictionaryServiceImpl implements DataDictionaryService {
 		return mapper.getDataDictionaryList(typeCode);
 	}
 
+	public List<DataDictionary> getInsuredDataDictionaryList(String typeCode)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getInsuredDataDictionaryList(typeCode);
+	}
+
 }

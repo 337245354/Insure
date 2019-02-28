@@ -42,9 +42,24 @@ public class InsuredInfoServiceImpl implements InsuredInfoService {
     }
 
     @Override
+    public int getInsuredInfoCount(Integer id,Integer policyStatus) throws Exception {
+        // TODO Auto-generated method stub
+        return mapper.getInsuredInfoCount(id,policyStatus);
+    }
+
+    @Override
     public InsuredInfo getInsuredInfo(Integer id,String buyerName) throws Exception {
         // TODO Auto-generated method stub
         return mapper.getInsuredInfo(id,buyerName);
+    }
+
+
+    @Override
+    public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus) throws Exception {
+        // TODO Auto-generated method stub
+        return mapper.getInsuredInfoList(id,null,policyStatus,
+                null,null,null,null,
+                null,null,null);
     }
 
 }

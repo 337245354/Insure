@@ -8,7 +8,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import cn.appsys.controller.salesuser.InsuredController;
 import cn.appsys.pojo.*;
 import cn.appsys.service.developer.*;
 import com.mysql.cj.util.StringUtils;
@@ -31,7 +30,6 @@ import cn.appsys.tools.PageSupport;
 @RequestMapping(value="/dev/flatform/app")
 public class AppController {
 	private Logger logger = Logger.getLogger(AppController.class);
-	private Logger loggerInsured = Logger.getLogger(InsuredController.class);
 
 	@Resource
 	private AppInfoService appInfoService;
@@ -181,7 +179,17 @@ public class AppController {
 		}
 		return dataDictionaryList;
 	}
-	
+
+    public List<DataDictionary> getInsuredDataDictionaryList(String typeCode){
+        List<DataDictionary> dataDictionaryList = null;
+        try {
+            dataDictionaryList = dataDictionaryService.getInsuredDataDictionaryList(typeCode);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return dataDictionaryList;
+    }
 	/**
 	 * 根据typeCode查询出相应的数据字典列表
 	 * @param pid
@@ -226,7 +234,99 @@ public class AppController {
 	public String add(@ModelAttribute("appInfo") AppInfo appInfo){
 		return "developer/appinfoadd";
 	}
-	
+
+
+	/**
+	 * 增加insured信息（跳转到新增insuredinfo页面）
+	 * @param insuredInfo
+	 * @return
+	 */
+    @RequestMapping(value="/insuredinfoadd",method=RequestMethod.GET)
+    public String insuredinfoadd(@ModelAttribute("insuredInfo") InsuredInfo insuredInfo){
+
+		logger.info("123321123");
+
+
+		return "developer/policyBasicInfoList";
+
+    }
+
+
+	//test
+	@RequestMapping(value="/getinsuredinfolist",method=RequestMethod.GET)
+	public String getInsuredInfoList(Model model,HttpSession session,
+								 @RequestParam(value="id",required=false) Integer _id,
+								 @RequestParam(value="policyStatus",required=false) String _policyStatus,
+								 @RequestParam(value="pageIndex",required=false) String pageIndex){
+		logger.info("getPolicyInfoList -- > id: " + _id);        //查询入参条件
+		logger.info("getPolicyInfoList -- > policyStatus: " +  _policyStatus);
+		logger.info("getPolicyInfoList -- > pageIndex: " + pageIndex);
+		Integer devId = ((DevUser)session.getAttribute(Constants.DEV_USER_SESSION)).getId();
+		List<InsuredInfo> insuredInfoList = null;
+		List<DataDictionary> policyStatusList = null;
+		List<DataDictionary> paymentTypeList = null;
+		//页面容量
+		int pageSize = Constants.pageSize;
+		//当前页码
+		Integer currentPageNo = 1;
+
+		if(pageIndex != null){
+			try{
+				currentPageNo = Integer.valueOf(pageIndex);
+			}catch (NumberFormatException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+
+		Integer queryStatus = null;
+		if(_policyStatus != null && !_policyStatus.equals("")){
+			queryStatus = Integer.parseInt(_policyStatus);
+		}
+
+		//总数量（表）
+		int totalCount = 0;
+		try {
+			totalCount = insuredInfoService.getInsuredInfoCount(_id, queryStatus);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		//总页数
+		PageSupport pages = new PageSupport();
+		pages.setCurrentPageNo(currentPageNo);
+		pages.setPageSize(pageSize);
+		pages.setTotalCount(totalCount);
+		int totalPageCount = pages.getTotalPageCount();
+		//控制首页和尾页
+		if(currentPageNo < 1){
+			currentPageNo = 1;
+		}else if(currentPageNo > totalPageCount){
+			currentPageNo = totalPageCount;
+		}
+		try {
+			insuredInfoList = insuredInfoService.getInsuredInfoList(_id,queryStatus);
+			policyStatusList = this.getInsuredDataDictionaryList("POLICY_STATUS");
+			paymentTypeList = this.getInsuredDataDictionaryList("PAYMENT_TYPE");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("insuredInfoList", insuredInfoList);
+		model.addAttribute("policyStatusList", policyStatusList);
+		model.addAttribute("paymentTypeList", paymentTypeList);
+		model.addAttribute("pages", pages);
+		model.addAttribute("queryStatus", queryStatus);
+
+		return "developer/appinfolist";
+	}
+
+
+
+
+
+
 	/**
 	 * 保存新增appInfo（主表）的数据
 	 * @param appInfo
@@ -617,22 +717,13 @@ public class AppController {
 	}
 
 
-	/**
-	 * 增加insured信息（跳转到新增insuredinfo页面）
-	 * @param InsuredInfo
-	 * @return
-	 */
-	@RequestMapping(value="/insuredinfoadd",method=RequestMethod.GET)
-	public String add(@ModelAttribute("appInfo") InsuredInfo insuredInfo){
-		return "developer/insuredinfoadd";
-	}
 
 
 
 
     /**
      * 保存修改后的InsuredInfo
-     * @param InsuredInfo
+     * @param insuredInfo
      * @param session
      * @return
      */

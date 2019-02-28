@@ -3,6 +3,7 @@ package cn.appsys.dao.insuredinfo;
 import cn.appsys.pojo.AppInfo;
 import cn.appsys.pojo.InsuredInfo;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -30,7 +31,8 @@ public interface InsuredInfoMapper {
 
 	public InsuredInfo getInsuredInfo(@Param(value = "id") Integer id, @Param(value = "buyerName") String buyerName)throws Exception;
 
-
+	public int getInsuredInfoCount( @Param(value="id") Integer queryId,
+									@Param(value = "policyStatus") Integer querypolicyStatus)throws Exception;
 	/**
 	 * 根据appId，更新最新versionId
 	 * @param versionId

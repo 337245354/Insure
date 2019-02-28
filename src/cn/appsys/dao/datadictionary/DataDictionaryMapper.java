@@ -7,4 +7,8 @@ import cn.appsys.pojo.DataDictionary;
 public interface DataDictionaryMapper {
 	
 	public List<DataDictionary> getDataDictionaryList(@Param("typeCode")String typeCode)throws Exception;
+
+	public List<DataDictionary> getInsuredDataDictionaryList(@Param("typeCode")String typeCode)throws Exception;
+
+
 }

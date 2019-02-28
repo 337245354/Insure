@@ -13,5 +13,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</trim>
 		<!-- order by creationDate DESC  -->
 	</select>
+
+	<select id="getInsuredDataDictionaryList" resultType="DataDictionary">
+		select * from  insureinfodb.data_dictionary
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="typeCode != null">
+				and typeCode = #{typeCode}
+			</if>
+		</trim>
+		<!-- order by creationDate DESC  -->
+	</select>
 	
 </mapper>

@@ -24,6 +24,27 @@ public interface InsuredInfoService {
 
 
 	/**
+	 * 根据条件查询insuredInfo表记录数
+	 * @param id
+	 * @param policyStatus
+	 * @return
+	 * @throws Exception
+	 */
+	public int getInsuredInfoCount(Integer id,Integer policyStatus)throws Exception;
+
+
+	/**
+	 * 根据条件查询出InsuredInfo列表
+	 * @param id
+	 * @param policyStatus
+	 * @return
+	 * @throws Exception
+	 */
+	public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus)throws Exception;
+
+
+
+	/**
 	 * 根据id、buyerName查找InsuredInfo
 	 * @param id
 	 * @return

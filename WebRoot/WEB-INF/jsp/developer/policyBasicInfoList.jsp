@@ -25,8 +25,7 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">保单编号</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <%--<input name="querySoftwareName" type="text" class="form-control col-md-7 col-xs-12" value="${querySoftwareName }">--%>
-                                    <input name="policyNumber" type="text" class="form-control col-md-7 col-xs-12"
-                                           value="${policyNumber }">
+                                    <input name="policyNumber" type="text" class="form-control col-md-7 col-xs-12" value="${policyNumber }">
                                 </div>
                             </div>
                         </li>
@@ -48,11 +47,13 @@
                                 </div>
                             </div>
                         </li>
-                        </li>
                         <li>
-                            <button type="" class="btn btn-primary"> 查 &nbsp;&nbsp;&nbsp;&nbsp;询</button>
-                            <button type="" class="btn btn-success"> 新 &nbsp;&nbsp;&nbsp;&nbsp;增</button>
-                            <button type="" class="btn btn-warning"> 修 &nbsp;&nbsp;&nbsp;&nbsp;改</button>
+                            <a href="${pageContext.request.contextPath}/dev/flatform/app/getinsuredinfolist"
+                               class="btn btn-primary ">查 &nbsp;&nbsp;&nbsp;&nbsp;询</a>
+                            <a href="${pageContext.request.contextPath}/dev/flatform/app/insuredinfoadd"
+                               class="btn btn-success ">新 &nbsp;&nbsp;&nbsp;&nbsp;增</a>
+                            <a href="${pageContext.request.contextPath}/dev/flatform/app/test123"
+                               class="btn btn-warning ">修 &nbsp;&nbsp;&nbsp;&nbsp;改</a>
                         </li>
 
                     </ul>
