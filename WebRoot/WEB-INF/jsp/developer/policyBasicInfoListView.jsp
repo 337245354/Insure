@@ -9,15 +9,15 @@
                 <h2>
                     保单基本信息 <i class="fa fa-user"></i>
                     <small>${devUserSession.devName}
-                        &nbsp;&nbsp;&nbsp;&nbsp; 单号22： ${InsuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
+                        &nbsp;&nbsp;&nbsp;&nbsp; 单号22： ${insuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
                     </small>
                 </h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
                 <form class="form-horizontal form-label-left" >
-                    <input type="hidden" name="id" id="id" value="${InsuredInfo.id}">
-                    <input type="hidden" name="buyerName" id="buyerName" value="${InsuredInfo.buyerName}">
+                    <input type="hidden" name="id" id="id" value="${insuredInfo.id}">
+                    <input type="hidden" name="buyerName" id="buyerName" value="${insuredInfo.buyerName}">
                     <input type="hidden" name="pageIndex" value="1"/>
                     <ul>
                         <li>
@@ -80,7 +80,7 @@
             <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${InsuredInfo.buyerName }>
+                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${insuredInfo.buyerName }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
