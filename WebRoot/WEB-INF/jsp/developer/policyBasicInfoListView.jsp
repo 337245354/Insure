@@ -9,7 +9,7 @@
                 <h2>
                     保单基本信息 <i class="fa fa-user"></i>
                     <small>${devUserSession.devName}
-                        &nbsp;&nbsp;&nbsp;&nbsp; 单号： ${InsuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
+                        &nbsp;&nbsp;&nbsp;&nbsp; 单号22： ${InsuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
                     </small>
                 </h2>
                 <div class="clearfix"></div>

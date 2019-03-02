@@ -573,7 +573,25 @@ public class AppController {
 		model.addAttribute(appInfo);
 		return "developer/appinfoview";
 	}
-	
+
+    /**
+     * 查看policyInfo信息，包括policy基本信息和其他信息
+     * @param InusredInfo
+     * @return
+     */
+    @RequestMapping(value="/policyview/{id}",method=RequestMethod.GET)
+    public String Insuredview(@PathVariable String id,Model model){
+        InsuredInfo insuredInfo = null;
+        try {
+            insuredInfo = insuredInfoService.getInsuredInfo(Integer.parseInt(id),null);
+        }catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        model.addAttribute(insuredInfo);
+        return "developer/policyBasicInfoListView";
+    }
+
 	/**
 	 * 修改app信息，包括：修改app基本信息（appInfo）和修改版本信息（appVersion）
 	 * 分为两步实现：
