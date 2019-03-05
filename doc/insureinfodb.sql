@@ -90,7 +90,7 @@ CREATE TABLE `insured_info` (
   `id` bigint(30) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `buyerName` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '购买保险人姓名',
   `buyerID` varchar(18) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '购买保险人身份证号',
-  `buyerPhone` bigint(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '购买保险人联系方式',
+  `buyerPhone` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '购买保险人联系方式',
   `policyStatus` bigint(10) DEFAULT NULL COMMENT '状态（来源于：data_dictionary，1 草稿 2 待审核 3 审核未通过 4 审核已通过 5 已生效保单）',
   `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   `updateDate` date DEFAULT NULL COMMENT '变更日期',

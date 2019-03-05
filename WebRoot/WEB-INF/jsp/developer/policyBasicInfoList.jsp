@@ -49,7 +49,7 @@
                         </li>
                         <li>
                             <a
-                               class="btn btn-primary viewPolicy" insuredinfoid=${"5002"}>查 &nbsp;&nbsp;&nbsp;&nbsp;询</a>
+                               class="btn btn-primary viewPolicy" insuredinfoid=${"5001"}>查 &nbsp;&nbsp;&nbsp;&nbsp;询</a>
                             <a href="${pageContext.request.contextPath}/dev/flatform/app/insuredinfoadd"
                                class="btn btn-success ">新 &nbsp;&nbsp;&nbsp;&nbsp;增</a>
                             <a href="${pageContext.request.contextPath}/dev/flatform/app/test123"

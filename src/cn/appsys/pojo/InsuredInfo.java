@@ -7,7 +7,7 @@ public class InsuredInfo {
     private Integer id;//主键id
     private String buyerName;//购买保险人姓名
     private String buyerID;//购买保险人身份证号
-    private Double buyerPhone;//购买保险人联系方式
+    private String buyerPhone;//购买保险人联系方式
     private Integer policyStatus;//保单状态
     private Date updateDate;//变更日期
     private Date startDate;//上架时间
@@ -49,11 +49,11 @@ public class InsuredInfo {
         this.buyerID = buyerID;
     }
 
-    public Double getBuyerPhone() {
+    public String getBuyerPhone() {
         return buyerPhone;
     }
 
-    public void setBuyerPhone(Double buyerPhone) {
+    public void setBuyerPhone(String buyerPhone) {
         this.buyerPhone = buyerPhone;
     }
 

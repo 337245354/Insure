@@ -9,7 +9,7 @@
                 <h2>
                     保单基本信息 <i class="fa fa-user"></i>
                     <small>${devUserSession.devName}
-                        &nbsp;&nbsp;&nbsp;&nbsp; 单号22： ${insuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
+                        &nbsp;&nbsp;&nbsp;&nbsp; 单号： ${insuredInfo.id} &nbsp;&nbsp;&nbsp;&nbsp; 状态：XXXXX
                     </small>
                 </h2>
                 <div class="clearfix"></div>
@@ -79,14 +79,14 @@
         <form class="form-label-left" action="insuredinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${insuredInfo.buyerName }>
+                <div class="col-sm-3 ">
+                    <input class="form-control " value="${insuredInfo.buyerName }"  readonly="readonly" id="inputEmail"  placeholder="购买保险人姓名" >
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">购买者身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号">
+                    <input type="text" class="form-control" value="${insuredInfo.buyerID }"  readonly="readonly" id="inputPassword" placeholder="购买保险人身份证号">
                 </div>
             </div>
             <div class="row"></div>
@@ -94,27 +94,13 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式">
+                    <input type="text" class="form-control" value="${insuredInfo.buyerPhone }"  readonly="readonly" id="inputEmail2" placeholder="购买保险人联系方式">
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名">
-                </div>
-            </div>
-            <div class="row"></div>
-            <br>
-            <div>
-                <label for="inputEmail2" class="col-sm-1 control-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="col-md-offset-6">
-                <label for="inputPassword2" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="text" class="form-control" value="${insuredInfo.beneficiaryName }"  readonly="readonly" id="inputPassword2" placeholder="受益人姓名">
                 </div>
             </div>
             <div class="row"></div>
@@ -135,7 +121,7 @@
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text" value="">
+                    <input class="form-control" size="1" type="text" value="${insuredInfo.startDate }">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -146,7 +132,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
+                    <textarea type="text" class="form-control" readonly="readonly" id="inputEmail4" rows="5" placeholder="备注,最多可填100字">${insuredInfo.comment }</textarea>
                 </div>
             </div>
             <div class="row"></div>

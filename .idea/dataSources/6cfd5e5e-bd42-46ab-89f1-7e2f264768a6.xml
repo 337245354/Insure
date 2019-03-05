@@ -1825,7 +1825,7 @@
     <column id="389" parent="254" name="buyerPhone">
       <Position>4</Position>
       <Comment>购买保险人联系方式</Comment>
-      <DataType>bigint(11)|0</DataType>
+      <DataType>varchar(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="390" parent="254" name="policyStatus">
