@@ -25,7 +25,7 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">保单编号</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <%--<input name="querySoftwareName" type="text" class="form-control col-md-7 col-xs-12" value="${querySoftwareName }">--%>
-                                    <input name="policyNumber" type="text" class="form-control col-md-7 col-xs-12" value="${policyNumber }">
+                                    <input name="policyNumber" type="text"   id="insuredinfoid" method = "get" class="form-control col-md-7 col-xs-12"  >
                                 </div>
                             </div>
                         </li>
@@ -49,7 +49,7 @@
                         </li>
                         <li>
                             <a
-                               class="btn btn-primary viewPolicy" insuredinfoid=${"5001"}>查 &nbsp;&nbsp;&nbsp;&nbsp;询</a>
+                               type="submit" class="btn btn-primary viewPolicy" >查 &nbsp;&nbsp;&nbsp;&nbsp;询</a>
                             <a href="${pageContext.request.contextPath}/dev/flatform/app/insuredinfoadd"
                                class="btn btn-success ">新 &nbsp;&nbsp;&nbsp;&nbsp;增</a>
                             <a href="${pageContext.request.contextPath}/dev/flatform/app/test123"

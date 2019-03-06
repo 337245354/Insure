@@ -11,5 +11,7 @@ $('.form_date').datetimepicker({
 
 $(".viewPolicy").on("click",function(){
     var obj = $(this);
-    window.location.href="policyview/"+ obj.attr("insuredinfoid");
+    var insuredinfoid=document.getElementById("insuredinfoid").value
+    window.location.href="policyview/"+ insuredinfoid;
+
 });
