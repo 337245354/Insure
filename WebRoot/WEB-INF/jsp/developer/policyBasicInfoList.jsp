@@ -86,7 +86,7 @@
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">购买者身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号"  name="buyerID" ${insuredInfo.buyerID }>
                 </div>
             </div>
             <div class="row"></div>
@@ -94,13 +94,13 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式">
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" ${insuredInfo.buyerPhone }>
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名">
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" ${insuredInfo.beneficiaryName }>
                 </div>
             </div>
             <div class="row"></div>
@@ -135,7 +135,7 @@
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text" value="">
+                    <input class="form-control" size="1" type="text" value="" name="startDate" ${insuredInfo.startDate }>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -146,7 +146,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字" name="comment" ${insuredInfo.comment }></textarea>
                 </div>
             </div>
             <div class="row"></div>

@@ -10,8 +10,8 @@ public class InsuredInfo {
     private String buyerPhone;//购买保险人联系方式
     private Integer policyStatus;//保单状态
     private Date updateDate;//变更日期
-    private Date startDate;//上架时间
-    private Date endDate;//下架时间
+    private Date startDate;//保单开始时间
+    private Date endDate;//保单失效时间
     private String beneficiaryName;//受益人姓名
     private BigDecimal premium;//保费
     private Integer paymentType;//支付方式

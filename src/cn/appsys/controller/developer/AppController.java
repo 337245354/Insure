@@ -752,7 +752,7 @@ public class AppController {
         logger.info("get policyinfo: " + "");
 		try {
 			if(insuredInfoService.add(insuredInfo)){
-				return "redirect:/developer/policyBasicInfoList";
+				return "developer/policyBasicInfoList";
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
