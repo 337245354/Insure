@@ -735,10 +735,6 @@ public class AppController {
 	}
 
 
-
-
-
-
     /**
      * 保存修改后的InsuredInfo
      * @param insuredInfo
@@ -746,8 +742,8 @@ public class AppController {
      * @return
      */
 
-	@RequestMapping(value = "/insuredinfoaddsave", method = RequestMethod.POST)
-    public  String InsuredInfoaddSave(InsuredInfo insuredInfo, HttpSession session, HttpServletRequest request) {
+	@RequestMapping(value = "/insuredbasicinfoaddsave", method = RequestMethod.POST)
+    public  String InsuredBasicInfoaddSave(InsuredInfo insuredInfo, HttpSession session, HttpServletRequest request) {
         String buyerName = null;
         logger.info("get policyinfo: " + "");
 		try {
@@ -759,21 +755,54 @@ public class AppController {
 			e.printStackTrace();
 		}
 
-		try {
-			if(insuredInfoService.add(insuredInfo)){   //insert into DB
-//				session.removeAttribute(Constants.NEW_POLICY);
-				return "developer/policyBasicInfoList";
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        return "developer/policyBasicInfoList";
+//		try {
+//			if(insuredInfoService.add(insuredInfo)){   //insert into DB
+////				session.removeAttribute(Constants.NEW_POLICY);
+//				return "developer/policyBasicInfoList";
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+        return "developer/policyCAInfoList";
     }
 
 
-	
-	/**
+    /**
+     * 保存修改后的InsuredInfo
+     * @param insuredInfo
+     * @param session
+     * @return
+     */
+
+    @RequestMapping(value = "/insuredCAinfoaddsave", method = RequestMethod.POST)
+    public  String InsuredCAInfoaddSave(InsuredCAInfo insuredCAInfo, HttpSession session, HttpServletRequest request) {
+        String buyerName = null;
+        try {
+            InsuredInfo insuredInfo = (InsuredInfo) session.getAttribute("newPolicy");
+            int policyNumber =  insuredInfo.getId();
+            insuredCAInfo.setInsuredId(policyNumber);
+            session.setAttribute(Constants.CALINE, insuredCAInfo);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+//		try {
+//			if(insuredInfoService.add(insuredInfo)){   //insert into DB
+////				session.removeAttribute(Constants.NEW_POLICY);
+//				return "developer/policyBasicInfoList";
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+        return "developer/policyGLInfoList";
+    }
+
+
+
+    /**
 	 * 修改操作时，删除文件（logo图片/apk文件），并更新数据库（app_info/app_version）
 	 * @param fileUrlPath
 	 * @param fileLocPath

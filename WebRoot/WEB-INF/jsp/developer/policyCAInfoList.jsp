@@ -69,11 +69,11 @@
                     </div>
                 </div>
             </div>
-
+        <form class="form-label-left" action="insuredCAinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">车辆型号</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="车辆型号">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="车辆型号"  name="vehicleModel" ${insuredCAInfo.vehicleModel }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
@@ -118,10 +118,11 @@
             <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">提交</button>
+                    <button id="send" type="submit" class="btn btn-success">保存</button>
+                    <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
-
+        </form>
         </div>
     </div>
 </div>

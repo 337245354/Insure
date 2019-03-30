@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-        <form class="form-label-left" action="insuredinfoaddsave" method="post" enctype="multipart/form-data">
+        <form class="form-label-left" action="insuredbasicinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3">

@@ -126,6 +126,7 @@ CREATE TABLE `CALine_info` (
   `carDamage` bit(1) NOT NULL COMMENT '是否购买车损险（默认值false：否(0)，true：是(1)）',
   `carFire` bit(1) NOT NULL COMMENT '是否购买自燃险（默认值false：否(0)，true：是(1)）',
   `carGlass` bit(1) NOT NULL COMMENT '是否购买玻璃险（默认值false：否(0)，true：是(1)）',
+  `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -148,6 +149,7 @@ CREATE TABLE `GLLine_info` (
   `limit` bigint(30) DEFAULT NULL COMMENT '保额赔付上限（元人民币）',
   `peopleAccident` bit(1) NOT NULL COMMENT '是否购买人身意外险（默认值false：否(0)，true：是(1)）',
   `peopleIllness` bit(1) NOT NULL COMMENT  '是否购买重疾险（默认值false：否(0)，true：是(1)）',
+  `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
