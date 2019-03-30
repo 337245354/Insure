@@ -751,7 +751,17 @@ public class AppController {
         String buyerName = null;
         logger.info("get policyinfo: " + "");
 		try {
-			if(insuredInfoService.add(insuredInfo)){
+			int policyNumber = insuredInfoService.getInsuredInfoCount(null,null)+5001;
+			insuredInfo.setId(policyNumber);
+			session.setAttribute(Constants.NEW_POLICY, insuredInfo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			if(insuredInfoService.add(insuredInfo)){   //insert into DB
+//				session.removeAttribute(Constants.NEW_POLICY);
 				return "developer/policyBasicInfoList";
 			}
 		} catch (Exception e) {
