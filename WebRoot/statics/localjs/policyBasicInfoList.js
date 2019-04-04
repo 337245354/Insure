@@ -15,3 +15,10 @@ $(".viewPolicy").on("click",function(){
     window.location.href="policyview/"+ insuredinfoid;
 
 });
+
+
+$(".choicePayMathod").on("click",function() {
+    var paymentType=$('input:radio[name="payment"]:checked').val();
+    paymentType = parseInt(paymentType)
+    $("#paymethodhidden").val(paymentType)
+});

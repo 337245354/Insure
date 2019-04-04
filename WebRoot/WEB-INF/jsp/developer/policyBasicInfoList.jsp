@@ -120,15 +120,22 @@
             <div class="row"></div>
             <br>
             <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
-            <div class="form-group col-sm-3">
+            <div class="col-md-offset-6 hidden">
+                <label for="inputPassword2" class="col-sm-2 control-label">paymethodhidden</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control " id="paymethodhidden"   name="paymentType" ${insuredInfo.paymentType }>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-3 choicePayMathod" id="paymethod" >
                 <label class="radio-inline">
-                    <input type="radio" value="option1" name="payment">现金
+                    <input type="radio" value="1" name="payment">现金
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option2" name="payment">支付宝/微信
+                    <input type="radio" value="2" name="payment">支付宝/微信
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option3" name="payment">信用卡
+                    <input type="radio" value="3" name="payment">信用卡
                 </label>
             </div>
             <div class="col-md-offset-6 form-group">
