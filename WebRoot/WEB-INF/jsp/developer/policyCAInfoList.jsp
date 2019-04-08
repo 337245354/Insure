@@ -87,20 +87,20 @@
             <label for="inputPassword" class="col-sm-1 control-label">可选保险</label>
             <div class="form-group col-sm-3">
                 <label class="checkbox-inline">
-                    <input type="checkbox" value="option1" name="payment">车损险
+                    <input type="checkbox" value="1"  name="carDamage" ${insuredCAInfo.carDamage}>车损险
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" value="option2" name="payment">自燃险
+                    <input type="checkbox" value="1"  name="carFire" ${insuredCAInfo.carFire}>自燃险
                 </label>
                 <label class="checkbox-inline">
-                    <input type="checkbox" value="option3" name="payment">玻璃险
+                    <input type="checkbox" value="1"  name="carGlass" ${insuredCAInfo.carGlass}>玻璃险
                 </label>
             </div>
             <div class="col-md-offset-6 form-group">
                 <label for="dtp_input2" class="col-sm-2 control-label">车辆买入时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text" value="">
+                    <input class="form-control" size="1" type="text" value="" name="vehicleBuyInTime" ${insuredCAInfo.vehicleBuyInTime }>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -111,7 +111,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"  name="comment" ${insuredCAInfo.comment }></textarea>
                 </div>
             </div>
             <div class="row"></div>

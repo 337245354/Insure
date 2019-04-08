@@ -6,11 +6,11 @@ public class InsuredCAInfo {
     private Integer id;//主键id
     private Integer insuredId;//外键，保险单号，来源于：insured_info表的主键id
     private String vehicleModel;//车辆型号
-    private String vehicleBuyInTime;//车辆买入时间
+    private Date vehicleBuyInTime;//车辆买入时间
     private Integer limit;//保额赔付上限（元人民币）
-    private Date carDamage;//是否购买车损险
-    private Date carFire;//是否购买自燃险
-    private Date carGlass;//是否购买玻璃险
+    private Boolean carDamage;//是否购买车损险
+    private Boolean carFire;//是否购买自燃险
+    private Boolean carGlass;//是否购买玻璃险
     private String comment;//备注
 
     public Integer getId() {
@@ -37,11 +37,11 @@ public class InsuredCAInfo {
         this.vehicleModel = vehicleModel;
     }
 
-    public String getVehicleBuyInTime() {
+    public Date getVehicleBuyInTime() {
         return vehicleBuyInTime;
     }
 
-    public void setVehicleBuyInTime(String vehicleBuyInTime) {
+    public void setVehicleBuyInTime(Date vehicleBuyInTime) {
         this.vehicleBuyInTime = vehicleBuyInTime;
     }
 
@@ -53,27 +53,27 @@ public class InsuredCAInfo {
         this.limit = limit;
     }
 
-    public Date getCarDamage() {
+    public Boolean getCarDamage() {
         return carDamage;
     }
 
-    public void setCarDamage(Date carDamage) {
+    public void setCarDamage(Boolean carDamage) {
         this.carDamage = carDamage;
     }
 
-    public Date getCarFire() {
+    public Boolean getCarFire() {
         return carFire;
     }
 
-    public void setCarFire(Date carFire) {
+    public void setCarFire(Boolean carFire) {
         this.carFire = carFire;
     }
 
-    public Date getCarGlass() {
+    public Boolean getCarGlass() {
         return carGlass;
     }
 
-    public void setCarGlass(Date carGlass) {
+    public void setCarGlass(Boolean carGlass) {
         this.carGlass = carGlass;
     }
 
