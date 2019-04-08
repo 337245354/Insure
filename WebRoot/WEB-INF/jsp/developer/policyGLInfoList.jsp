@@ -69,17 +69,17 @@
                     </div>
                 </div>
             </div>
-
+        <form class="form-label-left" action="insuredGLinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">被保人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="被保人姓名">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="被保人姓名" name="insuredPeople" ${insuredGLInfo.insuredPeople }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">被保人身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="被保人身份证号">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="被保人身份证号"  name="insuredPeopleID" ${insuredGLInfo.insuredPeopleID }>
                 </div>
             </div>
             <div class="row"></div>
@@ -87,34 +87,42 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">被保人年龄</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="被保人年龄">
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="被保人年龄" name="insuredPeopleAge" ${insuredGLInfo.insuredPeopleAge }>
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">赔付额上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="赔付额上限">
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="赔付额上限"  name="limit" ${insuredGLInfo.limit }>
                 </div>
             </div>
             <div class="row"></div>
             <br>
             <label for="inputPassword2" class="col-sm-1 control-label">被保人性别</label>
-            <div class="form-group col-sm-3">
+            <%--<div class="col-md-offset-6 hidden">--%>
+            <div class="col-md-offset-6 ">
+                <label for="inputPassword2" class="col-sm-2 control-label">genderhidden</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" ${insuredGLInfo.insuredPeopleGender }>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-3 choiceGender" id="peoplegender">
                 <label class="radio-inline">
-                    <input type="radio" value="option1" name="payment">男
+                    <input type="radio" value="1" name="gender">男
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option2" name="payment">女
+                    <input type="radio" value="0" name="gender">女
                 </label>
             </div>
             <div class="col-md-offset-6 form-group">
                 <label for="inputPassword2" class="col-sm-2 control-label">可选保险</label>
                 <div class="form-group col-sm-3">
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" name="payment">人身意外险
+                        <input type="checkbox" value="1" name="payment" name="peopleAccident" ${insuredGLInfo.peopleAccident} >人身意外险
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option2" name="payment">重疾险
+                        <input type="checkbox" value="1" name="payment" name="peopleIllness" ${insuredGLInfo.peopleIllness} >重疾险
                     </label>
                 </div>
             </div>
@@ -123,17 +131,18 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字" name="comment" ${insuredGLInfo.comment }></textarea>
                 </div>
             </div>
             <div class="row"></div>
             <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">提交</button>
+                    <button id="send" type="submit" class="btn btn-success">保存</button>
+                    <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
-
+        <form>
         </div>
     </div>
 </div>
@@ -143,4 +152,4 @@
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>
 <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/policyBasicInfoList.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/policyGLInfoList.js"></script>

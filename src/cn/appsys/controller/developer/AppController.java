@@ -769,8 +769,8 @@ public class AppController {
 
 
     /**
-     * 保存修改后的InsuredInfo
-     * @param insuredInfo
+     * 保存修改后的CAInsuredInfo
+     * @param insuredCAInfo
      * @param session
      * @return
      */
@@ -800,6 +800,37 @@ public class AppController {
         return "developer/policyGLInfoList";
     }
 
+	/**
+	 * 保存修改后的GLInsuredInfo
+	 * @param insuredGLInfo
+	 * @param session
+	 * @return
+	 */
+
+	@RequestMapping(value = "/insuredGLinfoaddsave", method = RequestMethod.POST)
+	public  String InsuredGLInfoaddSave(InsuredGLInfo insuredGLInfo, HttpSession session, HttpServletRequest request) {
+		String buyerName = null;
+		try {
+			InsuredInfo insuredInfo = (InsuredInfo) session.getAttribute("newPolicy");
+			int policyNumber =  insuredInfo.getId();
+			insuredGLInfo.setInsuredId(policyNumber);
+			session.setAttribute(Constants.GLLINE, insuredGLInfo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+//		try {
+//			if(insuredInfoService.add(insuredInfo)){   //insert into DB
+////				session.removeAttribute(Constants.NEW_POLICY);
+//				return "developer/policyBasicInfoList";
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		return "developer/policyOverview";
+	}
 
 
     /**

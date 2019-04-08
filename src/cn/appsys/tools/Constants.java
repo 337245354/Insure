@@ -11,4 +11,5 @@ public class Constants {
 	public final static String FILEUPLOAD_ERROR_4 = " * 上传文件过大！";
 	public final static String NEW_POLICY = "newPolicy";
 	public final static String CALINE = "CALine";
+	public final static String GLLINE = "GLLine";
 }
