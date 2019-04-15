@@ -832,6 +832,46 @@ public class AppController {
 		return "developer/policyOverview";
 	}
 
+	/**
+	 * 保存修改后的InsuredOverviewInfo
+	 * @param insuredInfo
+	 * @param insuredCAInfo
+	 * @param insuredGLInfo
+	 * @param session
+	 * @return
+	 */
+
+	@RequestMapping(value = "/insuredOverviewinfoaddsave", method = RequestMethod.POST)
+	public  String InsuredOverviewInfoaddSave(InsuredInfo insuredInfo,InsuredCAInfo insuredCAInfo,InsuredGLInfo insuredGLInfo, HttpSession session, HttpServletRequest request) {
+//		String buyerName = null;
+//		try {
+//			InsuredInfo insuredBasicOverviewInfo = (InsuredInfo) session.getAttribute("newPolicy");
+//			InsuredCAInfo insuredCAOverviewInfo = (InsuredCAInfo) session.getAttribute("CALine");
+//			InsuredGLInfo insuredGLOverviewInfo = (InsuredGLInfo) session.getAttribute("GLLine");
+//			int policyNumber =  insuredBasicOverviewInfo.getId();
+//			insuredInfo = insuredBasicOverviewInfo;
+//			insuredCAInfo = insuredCAOverviewInfo;
+//			insuredGLInfo = insuredGLOverviewInfo;
+//
+////			insuredGLInfo.setInsuredId(policyNumber);
+////			session.setAttribute(Constants.GLLINE, insuredGLInfo);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//
+////		try {
+////			if(insuredInfoService.add(insuredInfo)){   //insert into DB
+//////				session.removeAttribute(Constants.NEW_POLICY);
+////				return "developer/policyBasicInfoList";
+////			}
+////		} catch (Exception e) {
+////			// TODO Auto-generated catch block
+////			e.printStackTrace();
+////		}
+		return "developer/policyOverview";
+	}
+
 
     /**
 	 * 修改操作时，删除文件（logo图片/apk文件），并更新数据库（app_info/app_version）

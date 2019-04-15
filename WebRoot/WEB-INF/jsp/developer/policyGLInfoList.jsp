@@ -99,8 +99,7 @@
             <div class="row"></div>
             <br>
             <label for="inputPassword2" class="col-sm-1 control-label">被保人性别</label>
-            <%--<div class="col-md-offset-6 hidden">--%>
-            <div class="col-md-offset-6 ">
+            <div class="col-md-offset-6 hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">genderhidden</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" ${insuredGLInfo.insuredPeopleGender }>

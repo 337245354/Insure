@@ -69,17 +69,17 @@
                     </div>
                 </div>
             </div>
-
+        <form class="form-label-left" action="insuredOverviewinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" value="${newPolicy.buyerName}" >
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">购买者身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号"  name="buyerID" value="${newPolicy.buyerID}">
                 </div>
             </div>
             <div class="row"></div>
@@ -87,13 +87,13 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式">
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" value="${newPolicy.buyerPhone }">
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名">
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" value="${newPolicy.beneficiaryName }">
                 </div>
             </div>
             <div class="row"></div>
@@ -113,22 +113,29 @@
             <div class="row"></div>
             <br>
             <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
-            <div class="form-group col-sm-3">
+            <div class="col-md-offset-6 showPayMathod hidden">
+                <label for="inputPassword2" class="col-sm-2 control-label">paymethodhidden</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control " id="paymethodhidden"  name="paymentType" value="${newPolicy.paymentType }">
+                </div>
+            </div>
+
+            <div class="form-group col-sm-3" id="paymethod" value="${newPolicy.paymentType }">
                 <label class="radio-inline">
-                    <input type="radio" value="option1" name="payment">现金
+                    <input type="radio" value="1" name="payment" >现金
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option2" name="payment">支付宝/微信
+                    <input type="radio" value="2" name="payment">支付宝/微信
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" value="option3" name="payment">信用卡
+                    <input type="radio" value="3" name="payment">信用卡
                 </label>
             </div>
             <div class="col-md-offset-6 form-group">
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text" value="">
+                    <input class="form-control" size="1" type="text"  name="startDate" value="${newPolicy.startDate }">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -139,7 +146,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"  name="comment" >${newPolicy.comment }</textarea>
                 </div>
             </div>
 
@@ -154,10 +161,11 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Sign in</button>
+                    <button id="send" type="submit" class="btn btn-success">保存</button>
+                    <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
-
+        </form>
         </div>
     </div>
 </div>
@@ -167,4 +175,4 @@
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>
 <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/policyBasicInfoList.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/policyOverview.js"></script>
