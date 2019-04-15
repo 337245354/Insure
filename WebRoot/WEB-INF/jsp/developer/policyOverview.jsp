@@ -143,13 +143,139 @@
             </div>
             <div class="row"></div>
             <br>
-            <div>
-                <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
-                <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"  name="comment" >${newPolicy.comment }</textarea>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-1 control-label">车辆型号</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="inputEmai2l" placeholder="车辆型号"  name="vehicleModel" value="${CALine.vehicleModel }">
                 </div>
             </div>
-
+            <div class="form-group col-md-offset-6">
+                <label for="inputPassword" class="col-sm-2 control-label">保额赔付上限</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limit" value="${CALine.limit }">
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <label for="inputPassword" class="col-sm-1 control-label">可选保险</label>
+            <div class="col-md-offset-6 showCALineCoverage hidden">
+                <label for="inputPassword2" class="col-sm-2 control-label">CALineCoveragehidden</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control " id="CALineCarDamagehidden"   name="carDamage" value="${CALine.carDamage}">
+                    <input type="text" class="form-control " id="CALineCarFirehidden"   name="carFire" value="${CALine.carFire}">
+                    <input type="text" class="form-control " id="CALineCarGlasshidden"   name="carGlass" value="${CALine.carGlass}">
+                </div>
+            </div>
+            <div class="form-group col-sm-3">
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="true"  name="carDamage" ${CALine.carDamage}>车损险
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="true"  name="carFire" ${CALine.carFire}>自燃险
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="true"  name="carGlass" ${CALine.carGlass}>玻璃险
+                </label>
+            </div>
+            <div class="col-md-offset-6 form-group">
+                <label for="dtp_input2" class="col-sm-2 control-label">车辆买入时间</label>
+                <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
+                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="1" type="text" name="vehicleBuyInTime" value="${CALine.vehicleBuyInTime }">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+                <input type="hidden" id="dtp_input22" value=""/><br/>
+            </div>
+            <div class="row"></div>
+            <br>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-1 control-label">被保人姓名</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="inputEmai3l" placeholder="被保人姓名" name="insuredPeople" value="${GLLine.insuredPeople }">
+                </div>
+            </div>
+            <div class="form-group col-md-offset-6">
+                <label for="inputPassword" class="col-sm-2 control-label">被保人身份证号</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputPassword33" placeholder="被保人身份证号"  name="insuredPeopleID" value="${GLLine.insuredPeopleID }">
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <div>
+                <label for="inputEmail2" class="col-sm-1 control-label">被保人年龄</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="inputEmail32" placeholder="被保人年龄" name="insuredPeopleAge" value="${GLLine.insuredPeopleAge }">
+                </div>
+            </div>
+            <div class="col-md-offset-6">
+                <label for="inputPassword2" class="col-sm-2 control-label">赔付额上限</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputPassword32" placeholder="赔付额上限"  name="limit" value="${GLLine.limit }">
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <label for="inputPassword2" class="col-sm-1 control-label">被保人性别</label>
+            <div class="col-md-offset-6 showInsuredPeopleGender hidden">
+                <label for="inputPassword2" class="col-sm-2 control-label">genderhidden</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" value="${GLLine.insuredPeopleGender }">
+                </div>
+            </div>
+            <div class="form-group col-sm-3 choiceGender" id="peoplegender">
+                <label class="radio-inline">
+                    <input type="radio" value="true" name="gender">男
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" value="false" name="gender">女
+                </label>
+            </div>
+            <div class="col-md-offset-6 form-group">
+                <label for="inputPassword2" class="col-sm-2 control-label">可选保险</label>
+                <div class="col-md-offset-6 showGLLineCoverage hidden">
+                    <label for="inputPassword2" class="col-sm-2 control-label">GLLineCoveragehidden</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control " id="GLLinePeopleAccidenthidden"   name="peopleAccident" value="${GLLine.peopleAccident}">
+                        <input type="text" class="form-control " id="GLLinePeopleIllnesshidden"   name="peopleIllness" value="${GLLine.peopleIllness}">
+                    </div>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="true"  name="peopleAccident" value="${GLLine.peopleAccident}" >人身意外险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="true"  name="peopleIllness" value="${GLLine.peopleIllness}" >重疾险
+                    </label>
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <div>
+                <label for="inputEmail4" class="col-sm-1 control-label">基本信息备注</label>
+                <div class="col-sm-9">
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="3" placeholder="备注,最多可填100字"  name="comment" >${newPolicy.comment }</textarea>
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <div>
+                <label for="inputEmail24" class="col-sm-1 control-label">车险信息备注</label>
+                <div class="col-sm-9">
+                    <textarea type="text" class="form-control" id="inputEmail24" rows="3" placeholder="备注,最多可填100字"  name="comment" >${CALine.comment }</textarea>
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <div>
+                <label for="inputEmail34" class="col-sm-1 control-label">寿险信息备注</label>
+                <div class="col-sm-9">
+                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字" name="comment"> ${GLLine.comment }</textarea>
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-2">
                     <div class="checkbox">
@@ -161,7 +287,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button id="send" type="submit" class="btn btn-success">保存</button>
+                    <button id="send" type="submit" class="btn btn-success">提交</button>
                     <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>

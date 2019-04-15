@@ -79,7 +79,7 @@
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">保额赔付上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="保额赔付上限（元人民币）">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="保额赔付上限（元人民币"  name="limit" ${insuredCAInfo.limit }>
                 </div>
             </div>
             <div class="row"></div>

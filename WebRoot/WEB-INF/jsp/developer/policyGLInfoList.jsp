@@ -118,10 +118,10 @@
                 <label for="inputPassword2" class="col-sm-2 control-label">可选保险</label>
                 <div class="form-group col-sm-3">
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="1" name="payment" name="peopleAccident" ${insuredGLInfo.peopleAccident} >人身意外险
+                        <input type="checkbox" value="1"  name="peopleAccident" ${insuredGLInfo.peopleAccident} >人身意外险
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="1" name="payment" name="peopleIllness" ${insuredGLInfo.peopleIllness} >重疾险
+                        <input type="checkbox" value="1"  name="peopleIllness" ${insuredGLInfo.peopleIllness} >重疾险
                     </label>
                 </div>
             </div>
