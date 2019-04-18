@@ -1,6 +1,8 @@
 package cn.appsys.service.developer;
 
 import cn.appsys.pojo.AppInfo;
+import cn.appsys.pojo.InsuredCAInfo;
+import cn.appsys.pojo.InsuredGLInfo;
 import cn.appsys.pojo.InsuredInfo;
 
 import java.util.List;
@@ -8,12 +10,39 @@ import java.util.List;
 public interface InsuredInfoService {
 
 	/**
-	 * 新增app
+	 * 新增policy基础信息
 	 * @param insuredInfo
 	 * @return
 	 * @throws Exception
 	 */
 	public boolean add(InsuredInfo insuredInfo) throws Exception;
+
+	/**
+	 * 新增policy车辆信息
+	 * @param insuredCAInfo
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean add(InsuredCAInfo  insuredCAInfo) throws Exception;
+
+    /**
+     * 新增policy寿险信息
+     * @param insuredGLInfo
+     * @return
+     * @throws Exception
+     */
+    public boolean add(InsuredGLInfo  insuredGLInfo) throws Exception;
+
+	/**
+	 * 新增policy多个信息
+	 * @param insuredInfo
+	 * @param insuredCAInfo
+	 * @param insuredGLInfo
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean add(InsuredInfo insuredInfo, InsuredCAInfo  insuredCAInfo, InsuredGLInfo insuredGLInfo) throws Exception;
+
 	/**
 	 * 修改app信息
 	 * @param insuredInfo

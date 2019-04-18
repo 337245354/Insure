@@ -843,32 +843,32 @@ public class AppController {
 
 	@RequestMapping(value = "/insuredOverviewinfoaddsave", method = RequestMethod.POST)
 	public  String InsuredOverviewInfoaddSave(InsuredInfo insuredInfo,InsuredCAInfo insuredCAInfo,InsuredGLInfo insuredGLInfo, HttpSession session, HttpServletRequest request) {
-//		String buyerName = null;
-//		try {
-//			InsuredInfo insuredBasicOverviewInfo = (InsuredInfo) session.getAttribute("newPolicy");
-//			InsuredCAInfo insuredCAOverviewInfo = (InsuredCAInfo) session.getAttribute("CALine");
-//			InsuredGLInfo insuredGLOverviewInfo = (InsuredGLInfo) session.getAttribute("GLLine");
-//			int policyNumber =  insuredBasicOverviewInfo.getId();
-//			insuredInfo = insuredBasicOverviewInfo;
-//			insuredCAInfo = insuredCAOverviewInfo;
-//			insuredGLInfo = insuredGLOverviewInfo;
-//
-////			insuredGLInfo.setInsuredId(policyNumber);
-////			session.setAttribute(Constants.GLLINE, insuredGLInfo);
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-////		try {
-////			if(insuredInfoService.add(insuredInfo)){   //insert into DB
-//////				session.removeAttribute(Constants.NEW_POLICY);
-////				return "developer/policyBasicInfoList";
-////			}
-////		} catch (Exception e) {
-////			// TODO Auto-generated catch block
-////			e.printStackTrace();
-////		}
+		String buyerName = null;
+		try {
+			InsuredInfo insuredBasicOverviewInfo = (InsuredInfo) session.getAttribute("newPolicy");
+			InsuredCAInfo insuredCAOverviewInfo = (InsuredCAInfo) session.getAttribute("CALine");
+			InsuredGLInfo insuredGLOverviewInfo = (InsuredGLInfo) session.getAttribute("GLLine");
+			int policyNumber =  insuredBasicOverviewInfo.getId();
+			insuredInfo = insuredBasicOverviewInfo;
+			insuredCAInfo = insuredCAOverviewInfo;
+			insuredGLInfo = insuredGLOverviewInfo;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			if(
+					insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
+					){   //insert into DB
+//				session.removeAttribute(Constants.NEW_POLICY);
+				return "developer/policyOverview";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "developer/policyOverview";
 	}
 

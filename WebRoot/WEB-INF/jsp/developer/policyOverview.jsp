@@ -87,13 +87,13 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" value="${newPolicy.buyerPhone }">
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" value="${newPolicy.buyerPhone }" >
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" value="${newPolicy.beneficiaryName }">
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" value="${newPolicy.beneficiaryName }" >
                 </div>
             </div>
             <div class="row"></div>
@@ -116,11 +116,11 @@
             <div class="col-md-offset-6 showPayMathod hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">paymethodhidden</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control " id="paymethodhidden"  name="paymentType" value="${newPolicy.paymentType }">
+                    <input type="text" class="form-control " id="paymethodhidden"  name="paymentType" value="${newPolicy.paymentType }" >
                 </div>
             </div>
 
-            <div class="form-group col-sm-3" id="paymethod" value="${newPolicy.paymentType }">
+            <div class="form-group col-sm-3" id="paymethod" value="${newPolicy.paymentType }" >
                 <label class="radio-inline">
                     <input type="radio" value="1" name="payment" >现金
                 </label>
@@ -135,7 +135,7 @@
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text"  name="startDate" value="${newPolicy.startDate }">
+                    <input class="form-control" size="1" type="text"  name="startDate" value="${newPolicy.startDate }" >
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -152,7 +152,7 @@
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">保额赔付上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limit" value="${CALine.limit }">
+                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limit" value="${CALine.limit }" >
                 </div>
             </div>
             <div class="row"></div>
@@ -161,8 +161,8 @@
             <div class="col-md-offset-6 showCALineCoverage hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">CALineCoveragehidden</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control " id="CALineCarDamagehidden"   name="carDamage" value="${CALine.carDamage}">
-                    <input type="text" class="form-control " id="CALineCarFirehidden"   name="carFire" value="${CALine.carFire}">
+                    <input type="text" class="form-control " id="CALineCarDamagehidden"   name="carDamage" value="${CALine.carDamage}" >
+                    <input type="text" class="form-control " id="CALineCarFirehidden"   name="carFire" value="${CALine.carFire}" >
                     <input type="text" class="form-control " id="CALineCarGlasshidden"   name="carGlass" value="${CALine.carGlass}">
                 </div>
             </div>
@@ -192,13 +192,13 @@
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">被保人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmai3l" placeholder="被保人姓名" name="insuredPeople" value="${GLLine.insuredPeople }">
+                    <input type="text" class="form-control" id="inputEmai3l" placeholder="被保人姓名" name="insuredPeople" value="${GLLine.insuredPeople }" >
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">被保人身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword33" placeholder="被保人身份证号"  name="insuredPeopleID" value="${GLLine.insuredPeopleID }">
+                    <input type="text" class="form-control" id="inputPassword33" placeholder="被保人身份证号"  name="insuredPeopleID" value="${GLLine.insuredPeopleID }" >
                 </div>
             </div>
             <div class="row"></div>
@@ -221,7 +221,7 @@
             <div class="col-md-offset-6 showInsuredPeopleGender hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">genderhidden</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" value="${GLLine.insuredPeopleGender }">
+                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" value="${GLLine.insuredPeopleGender }" >
                 </div>
             </div>
             <div class="form-group col-sm-3 choiceGender" id="peoplegender">
@@ -237,8 +237,8 @@
                 <div class="col-md-offset-6 showGLLineCoverage hidden">
                     <label for="inputPassword2" class="col-sm-2 control-label">GLLineCoveragehidden</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control " id="GLLinePeopleAccidenthidden"   name="peopleAccident" value="${GLLine.peopleAccident}">
-                        <input type="text" class="form-control " id="GLLinePeopleIllnesshidden"   name="peopleIllness" value="${GLLine.peopleIllness}">
+                        <input type="text" class="form-control " id="GLLinePeopleAccidenthidden"   name="peopleAccident" value="${GLLine.peopleAccident}"  >
+                        <input type="text" class="form-control " id="GLLinePeopleIllnesshidden"   name="peopleIllness" value="${GLLine.peopleIllness}" >
                     </div>
                 </div>
                 <div class="form-group col-sm-3">
@@ -271,7 +271,7 @@
             <div>
                 <label for="inputEmail34" class="col-sm-1 control-label">寿险信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字" name="comment"> ${GLLine.comment }</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字" name="comment">${GLLine.comment}</textarea>
                 </div>
             </div>
             <div class="row"></div>

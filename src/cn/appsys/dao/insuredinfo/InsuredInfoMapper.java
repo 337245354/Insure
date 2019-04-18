@@ -1,6 +1,8 @@
 package cn.appsys.dao.insuredinfo;
 
 import cn.appsys.pojo.AppInfo;
+import cn.appsys.pojo.InsuredCAInfo;
+import cn.appsys.pojo.InsuredGLInfo;
 import cn.appsys.pojo.InsuredInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +14,10 @@ import java.util.List;
 public interface InsuredInfoMapper {
 
 	public int add(InsuredInfo insuredInfo) throws Exception;
+
+	public int addCA(InsuredCAInfo insuredCAInfo) throws Exception;
+
+	public int addGL(InsuredGLInfo insuredGLInfo) throws Exception;
 
 	public int modify(InsuredInfo insuredInfo)throws Exception;
 

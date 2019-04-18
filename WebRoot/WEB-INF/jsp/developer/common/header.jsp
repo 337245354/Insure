@@ -94,7 +94,7 @@
 										</li>
 										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/policyGLInfo">寿险内容</a>
 										</li>
-										<li><a href="javascript:;">总览</a>
+										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/policyOverview">总览</a>
 										</li>
 									</ul></li>
 							</ul>

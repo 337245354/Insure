@@ -14,6 +14,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					   #{paymentType},#{isApproved},#{isPaid},#{createdBy},
 					   #{creationDate},#{modifyBy},#{modifyDate},#{versionId})
 	</insert>
+
+	<insert id="addCA" parameterType="InsuredCAInfo">
+		insert into insureinfodb.caline_info (insuredId,vehicleModel,vehicleBuyInTime,limit_Ext,carDamage,carFire,carGlass,comment)
+		values(#{insuredId},#{vehicleModel},#{vehicleBuyInTime},#{limit},#{carDamage},
+		#{carFire},#{carGlass},#{comment})
+	</insert>
+
+	<insert id="addGL" parameterType="InsuredGLInfo">
+		insert into insureinfodb.glline_info (insuredId,insuredPeople,insuredPeopleID,insuredPeopleAge,insuredPeopleGender,limit_Ext,peopleAccident,peopleIllness,comment)
+		values(#{insuredId},#{insuredPeople},#{insuredPeopleID},#{insuredPeopleAge},#{insuredPeopleGender},
+		#{limit},#{peopleAccident},#{peopleIllness},#{comment})
+	</insert>
 	
 	<update id="modify" parameterType="InsuredInfo">
 		update insureinfodb.insured_info

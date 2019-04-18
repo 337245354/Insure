@@ -122,17 +122,17 @@ CREATE TABLE `CALine_info` (
   `insuredId` bigint(30) DEFAULT NULL COMMENT 'insuredId（来源于：insured_info表的主键id）',
   `vehicleModel` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '车辆型号',
   `vehicleBuyInTime` datetime DEFAULT NULL COMMENT '车辆买入时间',
-  `limit` bigint(30) DEFAULT NULL COMMENT '保额赔付上限（元人民币）',
-  `carDamage` bit(1) NOT NULL COMMENT '是否购买车损险（默认值false：否(0)，true：是(1)）',
-  `carFire` bit(1) NOT NULL COMMENT '是否购买自燃险（默认值false：否(0)，true：是(1)）',
-  `carGlass` bit(1) NOT NULL COMMENT '是否购买玻璃险（默认值false：否(0)，true：是(1)）',
+  `limit_Ext` bigint(30) DEFAULT NULL COMMENT '保额赔付上限（元人民币）',
+  `carDamage` bit(1) DEFAULT NULL COMMENT '是否购买车损险（默认值false：否(0)，true：是(1)）',
+  `carFire` bit(1) DEFAULT NULL COMMENT '是否购买自燃险（默认值false：否(0)，true：是(1)）',
+  `carGlass` bit(1) DEFAULT NULL COMMENT '是否购买玻璃险（默认值false：否(0)，true：是(1)）',
   `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `CALine_info` */
 
-insert  into `CALine_info`(`id`,`insuredId`,`vehicleModel`,`vehicleBuyInTime`,`limit`,`carDamage`,`carFire`,`carGlass`) values (1,5001,'model 3','2015-01-13 18:11:47',800000,1,1,1);
+insert  into `CALine_info`(`id`,`insuredId`,`vehicleModel`,`vehicleBuyInTime`,`limit_Ext`,`carDamage`,`carFire`,`carGlass`) values (1,5001,'model 3','2015-01-13 18:11:47',800000,1,1,1);
 
 
 /*Table structure for table `GLLine_info` */
@@ -146,16 +146,16 @@ CREATE TABLE `GLLine_info` (
   `insuredPeopleID` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '被保人身份证',
   `insuredPeopleAge` bigint(30) DEFAULT NULL COMMENT '被保人年龄',
   `insuredPeopleGender`bit(1) DEFAULT NULL COMMENT '被保人性别（false：女(0)，true：男(1)）',
-  `limit` bigint(30) DEFAULT NULL COMMENT '保额赔付上限（元人民币）',
-  `peopleAccident` bit(1) NOT NULL COMMENT '是否购买人身意外险（默认值false：否(0)，true：是(1)）',
-  `peopleIllness` bit(1) NOT NULL COMMENT  '是否购买重疾险（默认值false：否(0)，true：是(1)）',
+  `limit_Ext` bigint(30) DEFAULT NULL COMMENT '保额赔付上限（元人民币）',
+  `peopleAccident` bit(1) DEFAULT NULL COMMENT '是否购买人身意外险（默认值false：否(0)，true：是(1)）',
+  `peopleIllness` bit(1) DEFAULT NULL COMMENT  '是否购买重疾险（默认值false：否(0)，true：是(1)）',
   `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `GLLine_info` */
 
-insert  into `GLLine_info`(`id`,`insuredId`,`insuredPeople`,`insuredPeopleID`,`insuredPeopleAge`,`insuredPeopleGender`,`limit`,`peopleAccident`,`peopleIllness`) values (1,5001,'张三','310105199810102345',21,1,1000000,1,1);
+insert  into `GLLine_info`(`id`,`insuredId`,`insuredPeople`,`insuredPeopleID`,`insuredPeopleAge`,`insuredPeopleGender`,`limit_Ext`,`peopleAccident`,`peopleIllness`) values (1,5001,'张三','310105199810102345',21,1,1000000,1,1);
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

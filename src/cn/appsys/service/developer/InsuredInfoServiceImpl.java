@@ -7,13 +7,11 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import cn.appsys.dao.insuredinfo.InsuredInfoMapper;
-import cn.appsys.pojo.InsuredInfo;
+import cn.appsys.pojo.*;
 import org.springframework.stereotype.Service;
 
 import cn.appsys.dao.appinfo.AppInfoMapper;
 import cn.appsys.dao.appversion.AppVersionMapper;
-import cn.appsys.pojo.AppInfo;
-import cn.appsys.pojo.AppVersion;
 
 @Service
 public class InsuredInfoServiceImpl implements InsuredInfoService {
@@ -26,6 +24,46 @@ public class InsuredInfoServiceImpl implements InsuredInfoService {
         // TODO Auto-generated method stub
         boolean flag = false;
         if(mapper.add(insuredInfo) > 0){
+            flag = true;
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean add(InsuredCAInfo insuredCAInfo) throws Exception {
+        // TODO Auto-generated method stub
+        boolean flag = false;
+        if(mapper.addCA(insuredCAInfo) > 0){
+            flag = true;
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean add(InsuredGLInfo insuredGLInfo) throws Exception {
+        // TODO Auto-generated method stub
+        boolean flag = false;
+        if(mapper.addGL(insuredGLInfo) > 0){
+            flag = true;
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean add(InsuredInfo insuredInfo, InsuredCAInfo insuredCAInfo, InsuredGLInfo insuredGLInfo) throws Exception {
+        // TODO Auto-generated method stub
+        boolean flag = false;
+        int flagNumber = 0;
+        if(mapper.add(insuredInfo) > 0 ){
+            flagNumber ++;
+        }
+        if(mapper.addCA(insuredCAInfo) > 0 ){
+            flagNumber ++;
+        }
+        if(mapper.addGL(insuredGLInfo) > 0 ){
+            flagNumber ++;
+        }
+        if(flagNumber >= 3 ){
             flag = true;
         }
         return flag;

@@ -1646,7 +1646,7 @@
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="251" name="limit">
+    <column id="361" parent="251" name="limit_Ext">
       <Position>5</Position>
       <Comment>保额赔付上限（元人民币）</Comment>
       <DataType>bigint(30)|0</DataType>
@@ -1656,21 +1656,18 @@
       <Position>6</Position>
       <Comment>是否购买车损险（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="363" parent="251" name="carFire">
       <Position>7</Position>
       <Comment>是否购买自燃险（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="364" parent="251" name="carGlass">
       <Position>8</Position>
       <Comment>是否购买玻璃险（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="365" parent="251" name="comment">
@@ -1783,7 +1780,7 @@
       <DataType>bit(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="383" parent="253" name="limit">
+    <column id="383" parent="253" name="limit_Ext">
       <Position>7</Position>
       <Comment>保额赔付上限（元人民币）</Comment>
       <DataType>bigint(30)|0</DataType>
@@ -1793,14 +1790,12 @@
       <Position>8</Position>
       <Comment>是否购买人身意外险（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="385" parent="253" name="peopleIllness">
       <Position>9</Position>
       <Comment>是否购买重疾险（默认值false：否(0)，true：是(1)）</Comment>
       <DataType>bit(1)|0</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="386" parent="253" name="comment">
