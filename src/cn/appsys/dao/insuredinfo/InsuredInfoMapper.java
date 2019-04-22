@@ -37,6 +37,11 @@ public interface InsuredInfoMapper {
 
 	public InsuredInfo getInsuredInfo(@Param(value = "id") Integer id, @Param(value = "buyerName") String buyerName)throws Exception;
 
+	public InsuredCAInfo getInsuredCAInfo(@Param(value = "id") Integer id)throws Exception;
+
+	public InsuredGLInfo getInsuredGLInfo(@Param(value = "id") Integer id)throws Exception;
+
+
 	public int getInsuredInfoCount( @Param(value="id") Integer queryId,
 									@Param(value = "policyStatus") Integer querypolicyStatus)throws Exception;
 	/**

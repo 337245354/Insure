@@ -576,20 +576,25 @@ public class AppController {
 
     /**
      * 查看policyInfo信息，包括policy基本信息和其他信息
-     * @param InusredInfo
      * @return
      */
     @RequestMapping(value="/policyview/{id}",method=RequestMethod.GET)
     public String Insuredview(@PathVariable String id,Model model){
         InsuredInfo insuredInfo = null;
+        InsuredCAInfo insuredCAInfo = null;
+        InsuredGLInfo insuredGLInfo = null;
         try {
             insuredInfo = insuredInfoService.getInsuredInfo(Integer.parseInt(id),null);
+            insuredCAInfo = insuredInfoService.getInsuredCAInfo(Integer.parseInt(id));
+			insuredGLInfo = insuredInfoService.getInsuredGLInfo(Integer.parseInt(id));
         }catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         model.addAttribute(insuredInfo);
-        return "developer/policyBasicInfoListView";
+        model.addAttribute(insuredCAInfo);
+        model.addAttribute(insuredGLInfo);
+        return "developer/policyFound";
     }
 
 	/**
@@ -851,7 +856,6 @@ public class AppController {
 			insuredInfo = insuredBasicOverviewInfo;
 			insuredCAInfo = insuredCAOverviewInfo;
 			insuredGLInfo = insuredGLOverviewInfo;
-
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

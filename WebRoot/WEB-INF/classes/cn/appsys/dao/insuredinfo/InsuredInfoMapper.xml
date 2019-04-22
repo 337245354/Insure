@@ -126,6 +126,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		  </trim>
 	</select>
 
+	<select id="getInsuredCAInfo" resultType="InsuredCAInfo">
+		select a.id,a.insuredId,a.vehicleModel,a.vehicleBuyInTime,a.limit_Ext as 'limit',a.carDamage,a.carFire,a.carGlass,a.comment
+		from insureinfodb.caline_info a
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="id != null">
+				and a.insuredId = #{id}
+			</if>
+		</trim>
+	</select>
+
+	<select id="getInsuredGLInfo" resultType="InsuredGLInfo">
+		select *,a.limit_Ext as 'limit'
+		from insureinfodb.glline_info a
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="id != null">
+				and a.insuredId = #{id}
+			</if>
+		</trim>
+	</select>
+
 	<update id="updateVersionId">
 		update insureinfodb.insured_info
 			set versionId=#{versionId}

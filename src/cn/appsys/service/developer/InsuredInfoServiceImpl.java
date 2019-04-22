@@ -91,6 +91,17 @@ public class InsuredInfoServiceImpl implements InsuredInfoService {
         return mapper.getInsuredInfo(id,buyerName);
     }
 
+    @Override
+    public InsuredCAInfo getInsuredCAInfo(Integer id) throws Exception {
+        // TODO Auto-generated method stub
+        return mapper.getInsuredCAInfo(id);
+    }
+
+    @Override
+    public InsuredGLInfo getInsuredGLInfo(Integer id) throws Exception {
+        // TODO Auto-generated method stub
+        return mapper.getInsuredGLInfo(id);
+    }
 
     @Override
     public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus) throws Exception {

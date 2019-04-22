@@ -74,12 +74,28 @@ public interface InsuredInfoService {
 
 
 	/**
-	 * 根据id、buyerName查找InsuredInfo
+	 * 根据id、buyerName查找InsuredBasicInfo
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	public InsuredInfo getInsuredInfo(Integer id, String buyerName)throws Exception;
-	
+
+	/**
+	 * 根据id查找InsuredCAInfo
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public InsuredCAInfo getInsuredCAInfo(Integer id)throws Exception;
+
+	/**
+	 * 根据id查找InsuredGLInfo
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public InsuredGLInfo getInsuredGLInfo(Integer id)throws Exception;
+
 
 }
