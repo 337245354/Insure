@@ -843,7 +843,6 @@ public class AppController {
 
 	@RequestMapping(value = "/insuredOverviewinfoaddsave", method = RequestMethod.POST)
 	public  String InsuredOverviewInfoaddSave(InsuredInfo insuredInfo,InsuredCAInfo insuredCAInfo,InsuredGLInfo insuredGLInfo, HttpSession session, HttpServletRequest request) {
-		String buyerName = null;
 		try {
 			InsuredInfo insuredBasicOverviewInfo = (InsuredInfo) session.getAttribute("newPolicy");
 			InsuredCAInfo insuredCAOverviewInfo = (InsuredCAInfo) session.getAttribute("CALine");
@@ -863,6 +862,8 @@ public class AppController {
 					insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
 					){   //insert into DB
 //				session.removeAttribute(Constants.NEW_POLICY);
+//				session.removeAttribute(Constants.CALINE);
+//				session.removeAttribute(Constants.GLLINE);
 				return "developer/policyOverview";
 			}
 		} catch (Exception e) {
