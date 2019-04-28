@@ -859,6 +859,7 @@ public class AppController {
 			insuredInfo = insuredBasicOverviewInfo;
 			insuredCAInfo = insuredCAOverviewInfo;
 			insuredGLInfo = insuredGLOverviewInfo;
+			insuredInfo.setPolicyStatus(2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
