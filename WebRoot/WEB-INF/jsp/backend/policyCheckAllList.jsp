@@ -112,6 +112,9 @@
                         </li>
                         <li><a class="changePolicy" insuredInfoid="${insuredInfo.id}" data-toggle="tooltip" data-placement="top" title="" data-original-title="修改保单基础信息以及全部信息">修改</a>
                         </li>
+                        <li><a class="approvePolicy" insuredInfoid="${insuredInfo.id}"  status="${insuredInfo.policyStatus }"   statusname="${insuredInfo.policyStatusName }"
+							   data-toggle="tooltip" data-placement="top" title="" data-original-title="审核保单基础信息以及全部信息">审核</a>
+                        </li>
 					  </ul>
                     </div>
 										</td>
@@ -167,4 +170,4 @@
 </div>
 <%@include file="common/footer.jsp"%>
 <script src="${pageContext.request.contextPath }/statics/localjs/rollpage.js"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/policyAllList.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/policyCheckAllList.js"></script>

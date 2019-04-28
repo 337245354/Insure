@@ -9,6 +9,7 @@ public class InsuredInfo {
     private String buyerID;//购买保险人身份证号
     private String buyerPhone;//购买保险人联系方式
     private Integer policyStatus;//保单状态
+    private String policyStatusName;//保单状态名
     private Date updateDate;//变更日期
     private Date startDate;//保单开始时间
     private Date endDate;//保单失效时间
@@ -63,6 +64,14 @@ public class InsuredInfo {
 
     public void setPolicyStatus(Integer policyStatus) {
         this.policyStatus = policyStatus;
+    }
+
+    public String getPolicyStatusName() {
+        return policyStatusName;
+    }
+
+    public void setPolicyStatusName(String policyStatusName) {
+        this.policyStatusName = policyStatusName;
     }
 
     public Date getUpdateDate() {

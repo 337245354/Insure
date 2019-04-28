@@ -283,6 +283,32 @@ public class AppCheckController {
 		model.addAttribute(appInfo);
 		return "backend/appcheck";
 	}
+
+	/**
+	 * 跳转到policy信息审核页面
+	 * @param policyID
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/approve",method=RequestMethod.GET)
+	public String check(@RequestParam(value="pid",required=false) String policyID, Model model){
+		InsuredInfo insuredInfo = null;
+		InsuredCAInfo insuredCAInfo = null;
+		InsuredGLInfo insuredGLInfo = null;
+		try {
+			insuredInfo = insuredInfoService.getInsuredInfo(Integer.parseInt(policyID),null);
+			insuredCAInfo = insuredInfoService.getInsuredCAInfo(Integer.parseInt(policyID));
+			insuredGLInfo = insuredInfoService.getInsuredGLInfo(Integer.parseInt(policyID));
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute(insuredInfo);
+		model.addAttribute(insuredCAInfo);
+		model.addAttribute(insuredGLInfo);
+		return "backend/policyCheck";
+	}
+
 	@RequestMapping(value="/checksave",method=RequestMethod.POST)
 	public String checkSave(AppInfo appInfo){
 		logger.debug("appInfo =========== > " + appInfo.getStatus());
