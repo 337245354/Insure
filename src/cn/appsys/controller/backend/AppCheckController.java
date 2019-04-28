@@ -5,6 +5,8 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import cn.appsys.pojo.*;
+import cn.appsys.service.developer.InsuredInfoService;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.appsys.pojo.AppCategory;
-import cn.appsys.pojo.AppInfo;
-import cn.appsys.pojo.AppVersion;
-import cn.appsys.pojo.DataDictionary;
-import cn.appsys.pojo.DevUser;
 import cn.appsys.service.backend.AppService;
 import cn.appsys.service.developer.AppCategoryService;
 import cn.appsys.service.developer.AppVersionService;
@@ -33,6 +30,8 @@ public class AppCheckController {
 	
 	@Resource
 	private AppService appService;
+	@Resource
+	private InsuredInfoService insuredInfoService;
 	@Resource
 	private AppVersionService appVersionService;
 	@Resource 
@@ -141,11 +140,93 @@ public class AppCheckController {
 		}
 		return "backend/applist";
 	}
+
+	@RequestMapping(value="/getinsuredinfolist")
+	public String getInsuredInfoList(Model model,HttpSession session,
+									 @RequestParam(value="id",required=false) Integer _id,
+									 @RequestParam(value="policyStatus",required=false) String _policyStatus,
+									 @RequestParam(value="pageIndex",required=false) String pageIndex){
+		logger.info("getPolicyInfoList -- > id: " + _id);        //查询入参条件
+		logger.info("getPolicyInfoList -- > policyStatus: " +  _policyStatus);
+		logger.info("getPolicyInfoList -- > pageIndex: " + pageIndex);
+//		Integer devId = ((DevUser)session.getAttribute(Constants.DEV_USER_SESSION)).getId();
+		List<InsuredInfo> insuredInfoList = null;
+		List<InsuredGLInfo> insuredGLInfoList = null;
+		List<InsuredCAInfo> insuredCAInfoList = null;
+		List<DataDictionary> policyStatusList = null;
+		List<DataDictionary> paymentTypeList = null;
+		//页面容量
+		int pageSize = Constants.pageSize;
+		//当前页码
+		Integer currentPageNo = 1;
+
+		if(pageIndex != null){
+			try{
+				currentPageNo = Integer.valueOf(pageIndex);
+			}catch (NumberFormatException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+
+		Integer queryStatus = null;
+		if(_policyStatus != null && !_policyStatus.equals("")){
+			queryStatus = Integer.parseInt(_policyStatus);
+		}
+
+		//总数量（表）
+		int totalCount = 0;
+		try {
+			totalCount = insuredInfoService.getInsuredInfoCount(_id, queryStatus);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		//总页数
+		PageSupport pages = new PageSupport();
+		pages.setCurrentPageNo(currentPageNo);
+		pages.setPageSize(pageSize);
+		pages.setTotalCount(totalCount);
+		int totalPageCount = pages.getTotalPageCount();
+		//控制首页和尾页
+		if(currentPageNo < 1){
+			currentPageNo = 1;
+		}else if(currentPageNo > totalPageCount){
+			currentPageNo = totalPageCount;
+		}
+		try {
+			insuredInfoList = insuredInfoService.getInsuredInfoList(_id,queryStatus);
+			policyStatusList = this.getInsuredDataDictionaryList("POLICY_STATUS");
+			paymentTypeList = this.getInsuredDataDictionaryList("PAYMENT_TYPE");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		model.addAttribute("insuredInfoList", insuredInfoList);
+		model.addAttribute("policyStatusList", policyStatusList);
+		model.addAttribute("paymentTypeList", paymentTypeList);
+		model.addAttribute("pages", pages);
+		model.addAttribute("queryStatus", queryStatus);
+
+		return "backend/policyCheckAllList";
+	}
 	
 	public List<DataDictionary> getDataDictionaryList(String typeCode){
 		List<DataDictionary> dataDictionaryList = null;
 		try {
 			dataDictionaryList = dataDictionaryService.getDataDictionaryList(typeCode);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dataDictionaryList;
+	}
+
+	public List<DataDictionary> getInsuredDataDictionaryList(String typeCode){
+		List<DataDictionary> dataDictionaryList = null;
+		try {
+			dataDictionaryList = dataDictionaryService.getInsuredDataDictionaryList(typeCode);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
