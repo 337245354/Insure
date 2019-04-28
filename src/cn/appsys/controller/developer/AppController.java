@@ -253,7 +253,8 @@ public class AppController {
 
 
 	//test
-	@RequestMapping(value="/getinsuredinfolist",method=RequestMethod.GET)
+
+	@RequestMapping(value="/getinsuredinfolist")
 	public String getInsuredInfoList(Model model,HttpSession session,
 								 @RequestParam(value="id",required=false) Integer _id,
 								 @RequestParam(value="policyStatus",required=false) String _policyStatus,
@@ -263,6 +264,8 @@ public class AppController {
 		logger.info("getPolicyInfoList -- > pageIndex: " + pageIndex);
 		Integer devId = ((DevUser)session.getAttribute(Constants.DEV_USER_SESSION)).getId();
 		List<InsuredInfo> insuredInfoList = null;
+		List<InsuredGLInfo> insuredGLInfoList = null;
+		List<InsuredCAInfo> insuredCAInfoList = null;
 		List<DataDictionary> policyStatusList = null;
 		List<DataDictionary> paymentTypeList = null;
 		//页面容量
@@ -319,7 +322,7 @@ public class AppController {
 		model.addAttribute("pages", pages);
 		model.addAttribute("queryStatus", queryStatus);
 
-		return "developer/appinfolist";
+		return "developer/policyAllList";
 	}
 
 

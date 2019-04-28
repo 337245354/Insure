@@ -56,7 +56,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<select id="getInsuredInfoList" resultType="InsuredInfo">
-		select a.buyerName,a.startDate,a.endDate,a.beneficiaryName,a.premium,a.isApproved,a.isPaid,
+		select a.id,a.buyerName,a.startDate,a.endDate,a.beneficiaryName,a.premium,a.isApproved,a.buyerID,a.buyerPhone,a.isPaid,
 				(select buyerName from insureinfodb.insured_info where id = a.id) as buyerName,
 				a.policyStatus,
 				(select valueName from insureinfodb.data_dictionary d where  a.policyStatus=d.valueId AND d.typeCode='POLICY_STATUS') as policyStatusName,
