@@ -110,7 +110,7 @@
 
                         <li><a class="viewPolicy" insuredInfoid="${insuredInfo.id }" data-toggle="tooltip" data-placement="top" title="" data-original-title="查看保单基础信息以及全部信息">查看</a>
                         </li>
-                        <li><a class="changePolicy" insuredInfoid="${insuredInfo}" data-toggle="tooltip" data-placement="top" title="" data-original-title="修改保单基础信息以及全部信息">修改</a>
+                        <li><a class="changePolicy" insuredInfoid="${insuredInfo.id}" data-toggle="tooltip" data-placement="top" title="" data-original-title="修改保单基础信息以及全部信息">修改</a>
                         </li>
 					  </ul>
                     </div>
