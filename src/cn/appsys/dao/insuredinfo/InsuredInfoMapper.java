@@ -61,13 +61,6 @@ public interface InsuredInfoMapper {
 	 */
 	public int updateIsApprovedById(@Param(value = "id") Integer appId) throws Exception;
 
-	/*
-	 * 更新policy状态
-	 * @param policyStatus
-	 * @param id
-	 * @return
-	 * @throws Exception
-	 */
-	public int updateStatus(@Param(value="policyStatus")Integer policyStatus,@Param(value="isApproved")boolean isApproved,@Param(value="id")Integer id)throws Exception;
+
 
 }

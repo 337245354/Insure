@@ -157,10 +157,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			set isApproved=#{isApproved}
 			where id = #{id}
 	</update>
-
-	<update id="updateStatus">
-		update insureinfodb.insured_info
-		set policyStatus=#{policyStatus},isApproved=#{isApproved}
-		where id = #{id}
-	</update>
 </mapper>

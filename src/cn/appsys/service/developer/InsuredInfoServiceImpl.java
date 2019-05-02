@@ -111,15 +111,4 @@ public class InsuredInfoServiceImpl implements InsuredInfoService {
                 null,null,null);
     }
 
-    @Override
-    public boolean updateStatus(Integer policyStatus, Integer id) throws Exception {
-        // TODO Auto-generated method stub
-        boolean flag = false;
-        boolean isApproved =false;
-        if (policyStatus == 4){isApproved = true;}
-        if(mapper.updateStatus(policyStatus, isApproved,id) > 0 ){
-            flag = true;
-        }
-        return flag;
-    }
 }

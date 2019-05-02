@@ -63,8 +63,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
 
-        <form class="form-label-left" action="approvesave" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="id" id="id2" value="${insuredInfo.id}">
+        <%--<form class="form-label-left" action="insuredinfoaddsave" method="post" enctype="multipart/form-data">--%>
             <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3 ">
@@ -258,17 +257,17 @@
             <div class="row"></div>
             <br>
             <div class="form-group">
-                <div class="col-md-6 col-md-offset-3">
-                    <button id="status1" type="submit" name="policyStatus" value="4" class="btn btn-success">审核通过</button>
-                    <button id="status2" type="submit" name="policyStatus" value="3" class="btn btn-success">审核不通过</button>
-                    <button type="button" class="btn btn-primary" id="back">返回</button>
+                <div class="col-sm-offset-2 col-sm-10">
+                    <%--<button type="submit" class="btn btn-default">提交</button>--%>
+                        <%--<button id="send" type="submit" class="btn btn-success">保存</button>--%>
+                        <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
-        </form>
+        <%--</form>--%>
         </div>
     </div>
 </div>
-<%--<%@include file="common/footer.jsp" %>--%>
+<%@include file="common/footer.jsp" %>
 <script src="${pageContext.request.contextPath }/statics/localjs/appversionmodify.js"></script>
 <script src="${pageContext.request.contextPath }/statics/localjs/rollpage.js"></script>
 <script src="${pageContext.request.contextPath }/statics/localjs/appinfolist.js"></script>
