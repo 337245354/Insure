@@ -4,6 +4,7 @@ import cn.appsys.pojo.AppInfo;
 import cn.appsys.pojo.InsuredCAInfo;
 import cn.appsys.pojo.InsuredGLInfo;
 import cn.appsys.pojo.InsuredInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -97,5 +98,13 @@ public interface InsuredInfoService {
 	 */
 	public InsuredGLInfo getInsuredGLInfo(Integer id)throws Exception;
 
+	/**
+	 * 根据id更新policy的status
+	 * @param policyStatus
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean updateStatus(@Param(value="policyStatus")Integer policyStatus, @Param(value="id")Integer id)throws Exception;
 
 }

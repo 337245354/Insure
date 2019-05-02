@@ -259,8 +259,6 @@
             <br>
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-3">
-                    <button id="status1" type="submit" name="policyStatus" value="4" class="btn btn-success">审核通过</button>
-                    <button id="status2" type="submit" name="policyStatus" value="3" class="btn btn-success">审核不通过</button>
                     <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
