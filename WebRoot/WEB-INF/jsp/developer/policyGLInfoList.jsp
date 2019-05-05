@@ -138,10 +138,12 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button id="send" type="submit" class="btn btn-success">保存</button>
-                    <button type="button" class="btn btn-primary" id="back">返回</button>
+                    <button type="button" class="btn btn-primary" id="back">清除</button>
                 </div>
             </div>
-        <form>
+            <div class="clearfix"></div>
+            <br/><br/>
+        </form>
         </div>
     </div>
 </div>

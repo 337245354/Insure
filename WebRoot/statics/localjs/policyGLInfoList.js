@@ -4,3 +4,7 @@ $(".choiceGender").on("click",function() {
     gender = parseInt(gender)
     $("#genderhidden").val(gender)
 });
+
+$("#back").on("click",function(){
+    window.location.href = "policyGLInfo";
+});

@@ -119,9 +119,11 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button id="send" type="submit" class="btn btn-success">保存</button>
-                    <button type="button" class="btn btn-primary" id="back">返回</button>
+                    <button type="button" class="btn btn-primary" id="back">清除</button>
                 </div>
             </div>
+            <div class="clearfix"></div>
+            <br/><br/>
         </form>
         </div>
     </div>
@@ -132,4 +134,4 @@
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>
 <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/policyBasicInfoList.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/policyCAInfoList.js"></script>

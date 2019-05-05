@@ -24,5 +24,5 @@ $(".choicePayMathod").on("click",function() {
 });
 
 $("#back").on("click",function(){
-    window.location.href = "policyBasicInfo";
+    window.location.href = "policyCAInfo";
 });

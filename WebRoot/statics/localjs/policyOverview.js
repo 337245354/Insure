@@ -23,3 +23,7 @@ $(".showGLLineCoverage").ready(function(){
     $("input:checkbox[name='peopleAccident'][value = '"+peopleAccident_Ext+"']").attr('checked','true');
     $("input:checkbox[name='peopleIllness'][value = '"+peopleIllness_Ext+"']").attr('checked','true');
 });
+
+$("#back").on("click",function(){
+    window.location.href = "./policyBasicInfo";
+});
