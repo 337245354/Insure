@@ -264,6 +264,8 @@
                     <button type="button" class="btn btn-primary" id="back">返回</button>
                 </div>
             </div>
+            <div class="clearfix"></div>
+            <br/><br/>
         </form>
         </div>
     </div>

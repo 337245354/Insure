@@ -163,8 +163,9 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
+		<div class="clearfix"></div>
+		<br/><br/>
 	</div>
 </div>
 </div>
