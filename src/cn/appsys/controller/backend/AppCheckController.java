@@ -169,7 +169,7 @@ public class AppCheckController {
 			}
 		}
 
-		Integer queryStatus = null;//1
+		Integer queryStatus = null;
 		if(_policyStatus != null && !_policyStatus.equals("")){
 			queryStatus = Integer.parseInt(_policyStatus);
 		}
