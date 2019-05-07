@@ -853,12 +853,15 @@ public class AppController {
 	public  String InsuredOverviewInfoaddSave(InsuredInfo insuredInfo,InsuredCAInfo insuredCAInfo,InsuredGLInfo insuredGLInfo, HttpSession session, HttpServletRequest request) {
 		try {
 			InsuredInfo insuredBasicOverviewInfo = (InsuredInfo) session.getAttribute("newPolicy");
-			InsuredCAInfo insuredCAOverviewInfo = (InsuredCAInfo) session.getAttribute("CALine");
-			InsuredGLInfo insuredGLOverviewInfo = (InsuredGLInfo) session.getAttribute("GLLine");
-			int policyNumber =  insuredBasicOverviewInfo.getId();
 			insuredInfo = insuredBasicOverviewInfo;
+			if(insuredCAInfo != null){
+			InsuredCAInfo insuredCAOverviewInfo = (InsuredCAInfo) session.getAttribute("CALine");
 			insuredCAInfo = insuredCAOverviewInfo;
+			}
+			if(insuredGLInfo != null){
+			InsuredGLInfo insuredGLOverviewInfo = (InsuredGLInfo) session.getAttribute("GLLine");
 			insuredGLInfo = insuredGLOverviewInfo;
+			}
 			insuredInfo.setPolicyStatus(2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -869,9 +872,9 @@ public class AppController {
 			if(
 					insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
 					){   //insert into DB
-//				session.removeAttribute(Constants.NEW_POLICY);
-//				session.removeAttribute(Constants.CALINE);
-//				session.removeAttribute(Constants.GLLINE);
+				session.removeAttribute(Constants.NEW_POLICY);
+				session.removeAttribute(Constants.CALINE);
+				session.removeAttribute(Constants.GLLINE);
 				return "developer/policyOverview";
 			}
 		} catch (Exception e) {
