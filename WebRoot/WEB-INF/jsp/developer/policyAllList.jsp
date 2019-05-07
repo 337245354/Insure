@@ -85,6 +85,10 @@
 										保单开始时间</th>
 									<th class="sorting" tabindex="0"
 										aria-controls="datatable-responsive" rowspan="1" colspan="1"
+										aria-label="Last name: activate to sort column ascending">
+										保单状态</th>
+									<th class="sorting" tabindex="0"
+										aria-controls="datatable-responsive" rowspan="1" colspan="1"
 										style="width: 124px;"
 										aria-label="Last name: activate to sort column ascending">
 										操作</th>
@@ -99,6 +103,7 @@
 										<td>${insuredInfo.buyerPhone }</td>
 										<td>${insuredInfo.beneficiaryName }</td>
 										<td>${insuredInfo.startDate }</td>
+										<td>${insuredInfo.policyStatusName }</td>
 										<td>
 										<div class="btn-group">
                       <button type="button" class="btn btn-danger">点击操作</button>
