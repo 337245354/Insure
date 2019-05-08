@@ -10,6 +10,8 @@ public class InsuredInfo {
     private String buyerPhone;//购买保险人联系方式
     private Integer policyStatus;//保单状态
     private String policyStatusName;//保单状态名
+    private String hasCA;//是否购买车险
+    private String hasGL;//是否购买寿险
     private Date updateDate;//变更日期
     private Date startDate;//保单开始时间
     private Date endDate;//保单失效时间
@@ -186,4 +188,19 @@ public class InsuredInfo {
         this.comment = comment;
     }
 
+    public String getHasCA() {
+        return hasCA;
+    }
+
+    public void setHasCA(String hasCA) {
+        this.hasCA = hasCA;
+    }
+
+    public String getHasGL() {
+        return hasGL;
+    }
+
+    public void setHasGL(String hasGL) {
+        this.hasGL = hasGL;
+    }
 }

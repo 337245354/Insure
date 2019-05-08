@@ -92,6 +92,8 @@ CREATE TABLE `insured_info` (
   `buyerID` varchar(18) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '购买保险人身份证号',
   `buyerPhone` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '购买保险人联系方式',
   `policyStatus` bigint(10) DEFAULT NULL COMMENT '状态（来源于：data_dictionary，1 草稿 2 待审核 3 审核未通过 4 审核已通过 5 已生效保单）',
+  `hasCA` bit(1) DEFAULT NULL COMMENT '是否需要购买车险（默认值false：否(0)，true：是(1)）',
+  `hasGL` bit(1) DEFAULT NULL COMMENT '是否需要购买寿险（默认值false：否(0)，true：是(1)）',
   `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   `updateDate` date DEFAULT NULL COMMENT '变更日期',
   `startDate` datetime DEFAULT NULL COMMENT '开始时间',
@@ -111,7 +113,7 @@ CREATE TABLE `insured_info` (
 
 /*Data for the table `insured_info` */
 
-insert  into `insured_info`(`id`,`buyerName`,`buyerID`,`buyerPhone`,`policyStatus`,`comment`,`updateDate`,`startDate`,`endDate`,`beneficiaryName`,`premium`,`paymentType`,`isApproved`,`isPaid`,`createdBy`,`creationDate`,`modifyBy`,`modifyDate`,`versionId`) values (5001,'小电荔','310105201506292345','18616666666',5,'It is good',NULL,'2019-01-13 18:11:47','2020-01-13 18:11:47','大电力',1500,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),(5002,'小电荔','310105201506292345','18616666666',1,'It is draft',NULL,NULL,NULL,'大电力',2000,NULL,0,0,'test001','2019-01-13 15:11:47',NULL,NULL,1);
+insert  into `insured_info`(`id`,`buyerName`,`buyerID`,`buyerPhone`,`policyStatus`,`hasCA`,`hasGL`,`comment`,`updateDate`,`startDate`,`endDate`,`beneficiaryName`,`premium`,`paymentType`,`isApproved`,`isPaid`,`createdBy`,`creationDate`,`modifyBy`,`modifyDate`,`versionId`) values (5001,'小电荔','310105201506292345','18616666666',5,1,1,'It is good',NULL,'2019-01-13 18:11:47','2020-01-13 18:11:47','大电力',1500,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),(5002,'小电荔','310105201506292345','18616666666',1,0,0,'It is draft',NULL,NULL,NULL,'大电力',2000,NULL,0,0,'test001','2019-01-13 15:11:47',NULL,NULL,1);
 
 /*Table structure for table `CALine_info` */
 

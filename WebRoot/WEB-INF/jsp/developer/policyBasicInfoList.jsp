@@ -112,9 +112,14 @@
                 </div>
             </div>
             <div class="col-md-offset-6">
-                <label for="inputPassword2" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                <label for="inputPassword" class="col-sm-2 control-label">保险业务</label>
+                <div class="form-group col-sm-3">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="1"  name="hasCA" ${insuredInfo.hasCA}>车险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="1"  name="hasGL" ${insuredInfo.hasGL}>寿险
+                    </label>
                 </div>
             </div>
             <div class="row"></div>
