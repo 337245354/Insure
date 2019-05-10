@@ -346,6 +346,12 @@ public class AppCheckController {
 		return "backend/appcheck";
 	}
 
+	@RequestMapping(value="/formMain")
+	public String toformMain(){
+
+		return "backend/formMain";
+	}
+
 	@RequestMapping(value="/approvesave",method=RequestMethod.POST)
 	public String approveSave(InsuredInfo insuredInfo){
 		logger.debug("insuredInfo =========== > " + insuredInfo.getPolicyStatus());

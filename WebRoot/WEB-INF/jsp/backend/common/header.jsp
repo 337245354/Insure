@@ -66,6 +66,7 @@
                     <ul class="nav child_menu">
                       <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/list">APP审核</a></li>
                       <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/getinsuredinfolist">保单信息列表</a></li>
+                      <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/formMain">保单统计</a></li>
                       <li><a href="javascript:;">广告推广</a></li>
                     </ul>
                   </li>

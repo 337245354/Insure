@@ -20,7 +20,7 @@
 <div id="chartdiv"></div>
 
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/index.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/formMain.js"></script>
 
 
 <div class="clearfix"></div>
