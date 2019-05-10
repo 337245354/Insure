@@ -30,7 +30,7 @@
     <!-- add localcss 2016-8-21 -->
     <link href='${pageContext.request.contextPath }/statics/localcss/applist.css' rel='stylesheet'>
     <!-- form only-->
-    <link href="${pageContext.request.contextPath }/statics/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+    <link href="${pageContext.request.contextPath }/statics/css/formMainStyle.css" rel="stylesheet" media="screen" type="text/css" />
   </head>
   <body class="nav-md footer_fixed">
     <div class="container body">
