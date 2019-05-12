@@ -1,12 +1,18 @@
 package cn.appsys.controller.backend;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import cn.appsys.pojo.*;
 import cn.appsys.service.developer.InsuredInfoService;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -211,7 +217,77 @@ public class AppCheckController {
 
 		return "backend/policyCheckAllList";
 	}
-	
+	/**
+	 *返回出所有的InsuredInfoList并发送给json
+	 */
+	@RequestMapping(value="/getInsuredListToJson", method = RequestMethod.GET)
+	@ResponseBody
+	public Object getInsuredInfoListToJson(){
+		List<InsuredInfo> insuredInfoList = null;
+		List<InsuredGLInfo> insuredGLInfoList = null;
+		List<InsuredCAInfo> insuredCAInfoList = null;
+		List<DataDictionary> policyStatusList = null;
+		List<DataDictionary> paymentTypeList = null;
+		try {
+			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null);
+//			policyStatusList = this.getInsuredDataDictionaryList("POLICY_STATUS");
+//			paymentTypeList = this.getInsuredDataDictionaryList("PAYMENT_TYPE");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JSONArray JsonInsuredInfoList = new JSONArray();
+		for (int i=0 ;i < insuredInfoList.size();i ++ ){
+			JsonInsuredInfoList.add(insuredInfoList.get(i));
+		}
+
+		return JsonInsuredInfoList;
+	}
+
+	/**
+	 *返回出所有的InsuredInfoList并发送给json
+	 */
+	@RequestMapping(value="/getInsuredListToFormDateToJson", method = RequestMethod.GET)
+	@ResponseBody
+	public Object getPremiumListByDateToJson(){
+		List<InsuredInfo> insuredInfoList = null;
+		List<FormDate> formDateList = new ArrayList<>();
+
+		try {
+			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Integer formDateListId = 0;
+		for (int i=0 ;i < insuredInfoList.size();i ++ ){                          //把相同日期的premium全部都归结加到一起
+            FormDate formDate=new FormDate();
+			formDate.setStartDate(insuredInfoList.get(i).getStartDate());
+			formDate.setPremium(insuredInfoList.get(i).getPremium());
+			Integer sameDateId = null;
+			for(int ii=0 ;ii < formDateListId;ii ++){
+				if(formDateList.get(ii).getStartDate().equals(insuredInfoList.get(i).getStartDate())){  //validate has Duplicate date or not
+					sameDateId = ii;              // record id of insuredInfoList
+				}
+			}
+			if(sameDateId != null){
+				formDateList.get(sameDateId).setPremium(formDateList.get(sameDateId).getPremium().add(formDate.getPremium()));   //add before and now
+			}else{
+				formDateList.add(formDate);//add(formDateListId,formDate);
+				formDateListId++;
+			}
+
+		}
+
+		JSONArray JsonFormDateList = new JSONArray();
+		for (int i=0 ;i < formDateList.size();i ++ ){
+			JsonFormDateList.add(formDateList.get(i));
+		}
+
+		return JsonFormDateList;
+	}
+
+
 	public List<DataDictionary> getDataDictionaryList(String typeCode){
 		List<DataDictionary> dataDictionaryList = null;
 		try {

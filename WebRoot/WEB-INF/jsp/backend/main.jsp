@@ -18,7 +18,7 @@
 <div id="chartdiv"></div>
 
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/formMain.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/index_BAK.js"></script>
 
 <%--display js--%>
 <div class="clearfix"></div>
