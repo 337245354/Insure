@@ -11,16 +11,16 @@
 	</div>
 </div>
 
-<%--display js--%>
-<script src="${pageContext.request.contextPath }/statics/locallib/3/amcharts.js?x"></script>
-<script src="${pageContext.request.contextPath }/statics/locallib/3/serial.js?x"></script>
-<script src="${pageContext.request.contextPath }/statics/locallib/3/themes/dark.js"></script>
-<div id="chartdiv"></div>
+<%--&lt;%&ndash;display js&ndash;%&gt;--%>
+<%--<script src="${pageContext.request.contextPath }/statics/locallib/3/amcharts.js?x"></script>--%>
+<%--<script src="${pageContext.request.contextPath }/statics/locallib/3/serial.js?x"></script>--%>
+<%--<script src="${pageContext.request.contextPath }/statics/locallib/3/themes/dark.js"></script>--%>
+<%--<div id="chartdiv"></div>--%>
 
-<script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/index_BAK.js"></script>
+<%--<script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>--%>
+<%--<script src="${pageContext.request.contextPath }/statics/localjs/index_BAK.js"></script>--%>
 
-<%--display js--%>
+<%--&lt;%&ndash;display js&ndash;%&gt;--%>
 <div class="clearfix"></div>
 <%@include file="common/footer.jsp" %>  
      

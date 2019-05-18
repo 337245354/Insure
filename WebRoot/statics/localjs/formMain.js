@@ -1,7 +1,7 @@
 var insuredList_Ext=[];
 $.ajax({
-    // url:"./getInsuredListToFormDateToJson",//相同日期的可以归类，json只有data和premium
-    url:"./getInsuredListToJson",//每个日期的单独一个insuredInfo并显示
+    url:"./getInsuredListToFormDateToJson",//相同日期的可以归类，json只有data和premium
+    // url:"./getInsuredListToJson",//每个日期的单独一个insuredInfo并显示
     dataType:"json",
     contentType:"application/json",
     type:"get",
@@ -11,10 +11,13 @@ $.ajax({
     for(i in datas){
         var a ={};
         a.date = datas[i].startDate;
-        a.distance = datas[i].premium;
+        a.premiumForDate = datas[i].premiumForDate;
+        a.townName = datas[i].buyerName;
+        a.premiumForSinglePolicy = datas[i].premiumForSinglePolicy;
+        a.neededTime = datas[i].numberOfNotPayForDate;
         insuredList_Ext.push(a);
     }
-    alert(JSON.stringify(insuredList_Ext));
+    // alert(JSON.stringify(insuredList_Ext));  //显示数据
 });
 
 
@@ -58,7 +61,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 
   valueAxes: [{
     id: "a1",
-    title: "distance",
+    title: "premium For Date",
     gridAlpha: 0,
     axisAlpha: 0
   },{
@@ -69,7 +72,7 @@ var chart = AmCharts.makeChart("chartdiv", {
     labelsEnabled: false
   },{
     id: "a3",
-    title: "duration",
+    title: "needed Time",
     position: "right",
     gridAlpha: 0,
     axisAlpha: 0,
@@ -84,8 +87,8 @@ var chart = AmCharts.makeChart("chartdiv", {
   }],
   graphs: [{
     id: "g1",
-    valueField:  "distance",
-    title:  "distance",
+    valueField:  "premiumForDate",
+    title:  "premium For Date",
     type:  "column",
     fillAlphas:  0.9,
     valueAxis:  "a1",
@@ -96,9 +99,9 @@ var chart = AmCharts.makeChart("chartdiv", {
     alphaField:  "alpha",
   },{
     id: "g2",
-    valueField: "latitude",
+    valueField: "premiumForSinglePolicy",
     classNameField: "bulletClass",
-    title: "latitude/city",
+    title: "Maximum Single Premium/day",
     type: "line",
     valueAxis: "a2",
     lineColor: "#786c56",
@@ -113,13 +116,13 @@ var chart = AmCharts.makeChart("chartdiv", {
     bulletColor: "#000000",
     labelText: "[[townName2]]",
     labelPosition: "right",
-    balloonText: "latitude:[[value]]",
+    balloonText: "Maximum Single Premium:[[value]]",
     showBalloon: true,
     animationPlayed: true,
   },{
     id: "g3",
-    title: "duration",
-    valueField: "duration",
+    title: "needed Time",
+    valueField: "neededTime",
     type: "line",
     valueAxis: "a3",
     lineColor: "#ff5755",

@@ -1,6 +1,7 @@
 package cn.appsys.controller.backend;
 
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -245,13 +246,13 @@ public class AppCheckController {
 	}
 
 	/**
-	 *返回出所有的InsuredInfoList并发送给json
+	 *返回出所有的InsuredInfoList并发送给json，用于保险统计页面
 	 */
 	@RequestMapping(value="/getInsuredListToFormDateToJson", method = RequestMethod.GET)
 	@ResponseBody
 	public Object getPremiumListByDateToJson(){
-		List<InsuredInfo> insuredInfoList = null;
-		List<FormDate> formDateList = new ArrayList<>();
+		List<InsuredInfo> insuredInfoList = null;                              //insuredInfoList is the List from DB
+		List<FormDate> formDateList = new ArrayList<>();                        //formDateList is a totally new list for tran to json
 
 		try {
 			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null);
@@ -260,18 +261,39 @@ public class AppCheckController {
 			e.printStackTrace();
 		}
 		Integer formDateListId = 0;
-		for (int i=0 ;i < insuredInfoList.size();i ++ ){                          //把相同日期的premium全部都归结加到一起
+		for (int i=0 ;i < insuredInfoList.size();i ++ ){
             FormDate formDate=new FormDate();
 			formDate.setStartDate(insuredInfoList.get(i).getStartDate());
-			formDate.setPremium(insuredInfoList.get(i).getPremium());
+			formDate.setPremiumForDate(insuredInfoList.get(i).getPremium());      //把相同日期的premium全部都归结加到一起
+			formDate.setBuyerName(insuredInfoList.get(i).getBuyerName());
+			formDate.setId(insuredInfoList.get(i).getId());
+			formDate.setPremiumForSinglePolicy(insuredInfoList.get(i).getPremium());
+			if(insuredInfoList.get(i).getPolicyStatus() == 4){
+				formDate.setNumberOfNotPayForDate(10);                  //催一张单子大概花10分钟
+			}else{
+				formDate.setNumberOfNotPayForDate(0);
+			}
+
+
 			Integer sameDateId = null;
-			for(int ii=0 ;ii < formDateListId;ii ++){
-				if(formDateList.get(ii).getStartDate().equals(insuredInfoList.get(i).getStartDate())){  //validate has Duplicate date or not
-					sameDateId = ii;              // record id of insuredInfoList
+			for(int ii=0 ;ii < formDateListId;ii ++){                                                 //validate has Duplicate date or not
+				if(formDateList.get(ii).getStartDate().equals(insuredInfoList.get(i).getStartDate())){
+					sameDateId = ii;              // sameDateId record id of formDateList,
 				}
 			}
 			if(sameDateId != null){
-				formDateList.get(sameDateId).setPremium(formDateList.get(sameDateId).getPremium().add(formDate.getPremium()));   //add before and now
+				Integer id = formDateList.get(sameDateId).getPremiumForSinglePolicy().compareTo(formDate.getPremiumForSinglePolicy())>0 ? formDateList.get(sameDateId).getId():formDate.getId();       //id is just a property to figure out the Biggest premium's policy's buyerName
+				String buyerName = insuredInfoList.get(id-5001).getPremium().compareTo(formDate.getPremiumForDate())>0 ? insuredInfoList.get(id-5001).getBuyerName():formDate.getBuyerName();
+				BigDecimal premiumForSinglePolicy = insuredInfoList.get(id-5001).getPremium().compareTo(formDate.getPremiumForDate())>0 ? insuredInfoList.get(id-5001).getPremium():formDate.getPremiumForSinglePolicy();
+				formDateList.get(sameDateId).setId(id);
+				formDateList.get(sameDateId).setBuyerName(buyerName);
+				formDateList.get(sameDateId).setPremiumForSinglePolicy(premiumForSinglePolicy);
+
+				formDateList.get(sameDateId).setPremiumForDate(formDateList.get(sameDateId).getPremiumForDate().add(formDate.getPremiumForDate()));   //sum premiumForDate from before to now
+
+				formDateList.get(sameDateId).setNumberOfNotPayForDate(formDateList.get(sameDateId).getNumberOfNotPayForDate() + formDate.getNumberOfNotPayForDate());   //sum numberOfNotPayForDate from before to now,the value has been multiply by 10
+
+
 			}else{
 				formDateList.add(formDate);//add(formDateListId,formDate);
 				formDateListId++;
