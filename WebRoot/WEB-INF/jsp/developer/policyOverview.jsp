@@ -277,14 +277,13 @@
             <div class="row"></div>
             <br>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-2">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Remember me
-                        </label>
-                    </div>
+                <label for="inputEmail" class="col-sm-2 control-label">保费</label>
+                <div class="col-sm-3">
+                    <%--<input type="text" class="form-control" id="premium" placeholder="最终保费" name="premium" value="${newPolicy.premium}" readonly="readonly">--%>
+                    ${newPolicy.premium}
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button id="send" type="submit" class="btn btn-success">提交</button>

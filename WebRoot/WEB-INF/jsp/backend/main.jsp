@@ -18,7 +18,7 @@
 <%--<div id="chartdiv"></div>--%>
 
 <%--<script src="${pageContext.request.contextPath }/statics/js/jquery.min.js"></script>--%>
-<%--<script src="${pageContext.request.contextPath }/statics/localjs/index_BAK.js"></script>--%>
+<%--<script src="${pageContext.request.contextPath }/statics/localjs/index_Need_Delete.js"></script>--%>
 
 <%--&lt;%&ndash;display js&ndash;%&gt;--%>
 <div class="clearfix"></div>

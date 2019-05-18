@@ -837,6 +837,10 @@ public class AppController {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		//rating engine
+		InsuredInfo insuredInfo = (InsuredInfo) session.getAttribute("newPolicy");
+		insuredInfo.setPremium(RatingController.rateEngine(session));
+		session.setAttribute(Constants.NEW_POLICY,insuredInfo);
 		return "developer/policyOverview";
 	}
 
@@ -872,9 +876,9 @@ public class AppController {
 			if(
 					insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
 					){   //insert into DB
-				session.removeAttribute(Constants.NEW_POLICY);
-				session.removeAttribute(Constants.CALINE);
-				session.removeAttribute(Constants.GLLINE);
+//				session.removeAttribute(Constants.NEW_POLICY);
+//				session.removeAttribute(Constants.CALINE);
+//				session.removeAttribute(Constants.GLLINE);
 				return "developer/policyOverview";
 			}
 		} catch (Exception e) {
