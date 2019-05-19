@@ -18,6 +18,8 @@
                 <form class="form-horizontal form-label-left" >
                     <input type="hidden" name="id" id="id" value="${insuredInfo.id}">
                     <input type="hidden" name="buyerName" id="buyerName" value="${insuredInfo.buyerName}">
+                    <%--<input  name="id" id="id" value="${insuredInfo.id}">--%>
+                    <%--<input  name="buyerName" id="buyerName" value="${insuredInfo.buyerName}">--%>
                     <input type="hidden" name="pageIndex" value="1"/>
                     <ul>
                         <li>
@@ -62,18 +64,19 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-
-        <%--<form class="form-label-left" action="insuredinfoaddsave" method="post" enctype="multipart/form-data">--%>
+        <form class="form-label-left" action="modifysave" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="id2" value="${insuredInfo.id}">
             <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3 ">
-                    <input class="form-control " value="${insuredInfo.buyerName }"  readonly="readonly" id="inputEmail"  placeholder="购买保险人姓名" >
+                    <%--<input class="form-control " value="${insuredInfo.buyerName }"   id="inputEmail"  placeholder="购买保险人姓名">--%>
+                        <input type="text" class="form-control" value="${insuredInfo.buyerName }"  id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${insuredInfo.buyerName }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">购买者身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" value="${insuredInfo.buyerID }"  readonly="readonly" id="inputPassword" placeholder="购买保险人身份证号">
+                    <input type="text" class="form-control" value="${insuredInfo.buyerID }" id="inputPassword" placeholder="购买保险人身份证号"  name="buyerID" ${insuredInfo.buyerID }>
                 </div>
             </div>
             <div class="row"></div>
@@ -81,13 +84,15 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" value="${insuredInfo.buyerPhone }"  readonly="readonly" id="inputEmail2" placeholder="购买保险人联系方式">
+                    <%--<input type="text" class="form-control" value="${insuredInfo.buyerPhone }"  id="inputEmail2" placeholder="购买保险人联系方式">--%>
+                        <input type="text" class="form-control" value="${insuredInfo.buyerPhone }" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" ${insuredInfo.buyerPhone }>
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" value="${insuredInfo.beneficiaryName }"  readonly="readonly" id="inputPassword2" placeholder="受益人姓名">
+                    <%--<input type="text" class="form-control" value="${insuredInfo.beneficiaryName }"   id="inputPassword2" placeholder="受益人姓名">--%>
+                        <input type="text" class="form-control" value="${insuredInfo.beneficiaryName }" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" ${insuredInfo.beneficiaryName }>
                 </div>
             </div>
             <div class="row"></div>
@@ -114,7 +119,7 @@
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text"  readonly="readonly"  value="${insuredInfo.startDate }">
+                    <input class="form-control" size="1" type="text"  value="${insuredInfo.startDate }">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -125,13 +130,13 @@
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">车辆型号</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmai2l" placeholder="车辆型号"  name="vehicleModel"  readonly="readonly" value="${insuredCAInfo.vehicleModel }">
+                    <input type="text" class="form-control" id="inputEmai2l" placeholder="车辆型号"  name="vehicleModel"  value="${insuredCAInfo.vehicleModel }" ${insuredCAInfo.vehicleModel }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">保额赔付上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limitCA"  readonly="readonly" value="${insuredCAInfo.limitCA }" >
+                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limitCA"  value="${insuredCAInfo.limitCA }" ${insuredCAInfo.limitCA }>
                 </div>
             </div>
             <div class="row"></div>
@@ -160,7 +165,7 @@
                 <label for="dtp_input2" class="col-sm-2 control-label">车辆买入时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
                      data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text" name="vehicleBuyInTime"  readonly="readonly" value="${insuredCAInfo.vehicleBuyInTime }">
+                    <input class="form-control" size="1" type="text" name="vehicleBuyInTime"  value="${insuredCAInfo.vehicleBuyInTime }">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -171,13 +176,13 @@
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">被保人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmai3l" placeholder="被保人姓名" name="insuredPeople"  readonly="readonly" value="${insuredGLInfo.insuredPeople }" >
+                    <input type="text" class="form-control" id="inputEmai3l" placeholder="被保人姓名" name="insuredPeople"  value="${insuredGLInfo.insuredPeople }" ${insuredGLInfo.insuredPeople } >
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">被保人身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword33" placeholder="被保人身份证号"  name="insuredPeopleID"  readonly="readonly" value="${insuredGLInfo.insuredPeopleID }" >
+                    <input type="text" class="form-control" id="inputPassword33" placeholder="被保人身份证号"  name="insuredPeopleID"   value="${insuredGLInfo.insuredPeopleID }" ${insuredGLInfo.insuredPeopleID }>
                 </div>
             </div>
             <div class="row"></div>
@@ -185,13 +190,13 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">被保人年龄</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail32" placeholder="被保人年龄" name="insuredPeopleAge" readonly="readonly" value="${insuredGLInfo.insuredPeopleAge }">
+                    <input type="text" class="form-control" id="inputEmail32" placeholder="被保人年龄" name="insuredPeopleAge"  value="${insuredGLInfo.insuredPeopleAge }" ${insuredGLInfo.insuredPeopleAge }>
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">赔付额上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword32" placeholder="赔付额上限"  name="limitGL" readonly="readonly" value="${insuredGLInfo.limitGL }">
+                    <input type="text" class="form-control" id="inputPassword32" placeholder="赔付额上限"  name="limitGL"  value="${insuredGLInfo.limitGL }" ${insuredGLInfo.limitGL }>
                 </div>
             </div>
             <div class="row"></div>
@@ -200,7 +205,7 @@
             <div class="col-md-offset-6 showInsuredPeopleGender hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">genderhidden</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" readonly="readonly" value="${insuredGLInfo.insuredPeopleGender }" >
+                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender"  value="${insuredGLInfo.insuredPeopleGender }" >
                 </div>
             </div>
             <div class="form-group col-sm-3 choiceGender" id="peoplegender">
@@ -235,7 +240,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">基本信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="comment" >${insuredInfo.comment }</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="3" placeholder="备注,最多可填100字"   name="comment" >${insuredInfo.comment }</textarea>
                 </div>
             </div>
             <div class="row"></div>
@@ -243,7 +248,7 @@
             <div>
                 <label for="inputEmail24" class="col-sm-1 control-label">车险信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail24" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="comment" >${insuredCAInfo.comment }</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail24" rows="3" placeholder="备注,最多可填100字"   name="comment" >${insuredCAInfo.comment }</textarea>
                 </div>
             </div>
             <div class="row"></div>
@@ -251,19 +256,31 @@
             <div>
                 <label for="inputEmail34" class="col-sm-1 control-label">寿险信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="comment">${insuredGLInfo.comment}</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字"  name="comment">${insuredGLInfo.comment}</textarea>
+                </div>
+            </div>
+            <div class="row"></div>
+            <br>
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">保费</label>
+                <div class="col-sm-3">
+                    <%--<input type="text" class="form-control" id="premium" placeholder="最终保费" name="premium" value="${newPolicy.premium}" readonly="readonly">--%>
+                    ${newPolicy.premium}
                 </div>
             </div>
             <div class="row"></div>
             <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
+                        <%--<button id="send" type="submit" class="btn btn-success">提交</button>--%>
+                        <button type="submit" class="btn btn-info" id="save">保存</button>
                         <button type="button" class="btn btn-primary" id="back">返回</button>
+
                 </div>
             </div>
             <div class="clearfix"></div>
             <br/><br/>
-        <%--</form>--%>
+        </form>
         </div>
     </div>
 </div>
@@ -274,4 +291,4 @@
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>
 <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/policyFound.js"></script>
+<script src="${pageContext.request.contextPath }/statics/localjs/policyModify.js"></script>

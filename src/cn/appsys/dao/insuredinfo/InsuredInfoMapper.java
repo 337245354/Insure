@@ -21,6 +21,10 @@ public interface InsuredInfoMapper {
 
 	public int modify(InsuredInfo insuredInfo)throws Exception;
 
+	public int modifyCA(InsuredCAInfo insuredCAInfo) throws Exception;
+
+	public int modifyGL(InsuredGLInfo insuredGLInfo) throws Exception;
+
 	public int deleteInsuredInfoById(@Param(value = "id") Integer delId)throws Exception;
 
 	public List<InsuredInfo> getInsuredInfoList(@Param(value = "id") Integer queryId,

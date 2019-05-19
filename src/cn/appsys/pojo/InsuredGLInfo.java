@@ -9,7 +9,7 @@ public class InsuredGLInfo {
     private String insuredPeopleID;//被保人身份证
     private Integer insuredPeopleAge;//被保人年龄
     private Boolean insuredPeopleGender;//被保人性别（false：女(0)，true：男(1)）
-    private Integer limit;//保额赔付上限（元人民币）
+    private Integer limitGL;//保额赔付上限（元人民币）
     private Boolean peopleAccident;//是否购买人身意外险（默认值false：否(0)，true：是(1)）
     private Boolean peopleIllness;//是否购买重疾险（默认值false：否(0)，true：是(1)）
     private String comment;//备注
@@ -54,12 +54,12 @@ public class InsuredGLInfo {
         this.insuredPeopleGender = insuredPeopleGender;
     }
 
-    public Integer getLimit() {
-        return limit;
+    public Integer getLimitGL() {
+        return limitGL;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setLimitGL(Integer limitGL) {
+        this.limitGL = limitGL;
     }
 
     public Boolean getPeopleAccident() {

@@ -50,7 +50,7 @@ public interface InsuredInfoService {
 	 * @return
 	 * @throws Exception
 	 */
-	public boolean modify(InsuredInfo insuredInfo)throws Exception;
+	public boolean modify(InsuredInfo insuredInfo,InsuredCAInfo  insuredCAInfo, InsuredGLInfo insuredGLInfo)throws Exception;
 
 
 	/**

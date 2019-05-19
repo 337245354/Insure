@@ -7,7 +7,7 @@ public class InsuredCAInfo {
     private Integer insuredId;//外键，保险单号，来源于：insured_info表的主键id
     private String vehicleModel;//车辆型号
     private Date vehicleBuyInTime;//车辆买入时间
-    private Integer limit;//保额赔付上限（元人民币）
+    private Integer limitCA;//保额赔付上限（元人民币）
     private Boolean carDamage;//是否购买车损险
     private Boolean carFire;//是否购买自燃险
     private Boolean carGlass;//是否购买玻璃险
@@ -45,12 +45,12 @@ public class InsuredCAInfo {
         this.vehicleBuyInTime = vehicleBuyInTime;
     }
 
-    public Integer getLimit() {
-        return limit;
+    public Integer getLimitCA() {
+        return limitCA;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setLimitCA(Integer limitCA) {
+        this.limitCA = limitCA;
     }
 
     public Boolean getCarDamage() {

@@ -152,7 +152,7 @@
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">保额赔付上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limit" value="${CALine.limit }" >
+                    <input type="text" class="form-control" id="inputPassword22" placeholder="保额赔付上限（元人民币）" name="limitCA" value="${CALine.limitCA }" >
                 </div>
             </div>
             <div class="row"></div>
@@ -212,7 +212,7 @@
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">赔付额上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword32" placeholder="赔付额上限"  name="limit" value="${GLLine.limit }">
+                    <input type="text" class="form-control" id="inputPassword32" placeholder="赔付额上限"  name="limitGL" value="${GLLine.limitGL }">
                 </div>
             </div>
             <div class="row"></div>

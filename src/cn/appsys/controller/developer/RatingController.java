@@ -28,7 +28,7 @@ public class RatingController {
         }
 
         if(insuredCAInfo != null){
-            BigDecimal baseLimit = BigDecimal.valueOf(insuredCAInfo.getLimit());
+            BigDecimal baseLimit = BigDecimal.valueOf(insuredCAInfo.getLimitCA());
             BigDecimal factor = new BigDecimal(0.0);
             BigDecimal factorCarDamage = new BigDecimal(0.04);
             BigDecimal factorCarFire = new BigDecimal(0.02);
@@ -46,7 +46,7 @@ public class RatingController {
         }
 
         if(insuredGLInfo != null){
-            BigDecimal baseLimit = BigDecimal.valueOf(insuredGLInfo.getLimit());
+            BigDecimal baseLimit = BigDecimal.valueOf(insuredGLInfo.getLimitGL());
             BigDecimal factor = new BigDecimal(0.0);
             BigDecimal factorPeopleAccident = new BigDecimal(0.02);
             BigDecimal factorPeopleIllness = new BigDecimal(0.03);

@@ -93,7 +93,7 @@
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">赔付额上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="赔付额上限"  name="limit" ${insuredGLInfo.limit }>
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="赔付额上限"  name="limitGL" ${insuredGLInfo.limitGL }>
                 </div>
             </div>
             <div class="row"></div>

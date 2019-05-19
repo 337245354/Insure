@@ -114,7 +114,7 @@ CREATE TABLE `insured_info` (
 /*Data for the table `insured_info` */
 
 insert  into `insured_info`(`id`,`buyerName`,`buyerID`,`buyerPhone`,`policyStatus`,`hasCA`,`hasGL`,`comment`,`updateDate`,`startDate`,`endDate`,`beneficiaryName`,`premium`,`paymentType`,`isApproved`,`isPaid`,`createdBy`,`creationDate`,`modifyBy`,`modifyDate`,`versionId`) values
-  (5001,'小电荔','310105201506292345','18616666666',4,1,1,'It is good',NULL,'2019-01-14 18:11:47','2020-01-14 18:11:47','大电力',1700,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),
+  (5001,'小电荔','310105201506292345','18616666666',2,1,1,'It is good',NULL,'2019-01-14 18:11:47','2020-01-14 18:11:47','大电力',1700,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),
   (5002,'小电荔','310105201506292345','18616666666',5,0,0,'It is 1',NULL,'2019-01-15 18:11:47','2020-01-15 18:11:47','大电力',2000,NULL,0,0,'test001','2019-01-13 15:11:47',NULL,NULL,1),
   (5003,'小橙子','310105201506292345','18616666666',5,1,1,'It is 2',NULL,'2019-01-16 18:11:47','2020-02-16 18:11:47','大电力',1500,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),
   (5004,'大西瓜','310105201506292345','18616666666',4,1,1,'It is 3',NULL,'2019-01-19 18:11:47','2020-03-23 18:11:47','大电力',1700,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),

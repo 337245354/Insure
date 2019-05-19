@@ -8,7 +8,7 @@ $(".viewPolicy").on("click",function(){
 
 $(".changePolicy").on("click",function(){
     var obj = $(this);
-    window.location.href="policyview/"+ obj.attr("insuredinfoid");
+    window.location.href="policymodify/"+ obj.attr("insuredinfoid");
 });
 
 $(".approvePolicy").on("click",function(){

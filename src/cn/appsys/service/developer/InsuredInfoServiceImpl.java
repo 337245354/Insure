@@ -70,10 +70,20 @@ public class InsuredInfoServiceImpl implements InsuredInfoService {
     }
 
     @Override
-    public boolean modify(InsuredInfo insuredInfo) throws Exception {
+    public boolean modify(InsuredInfo insuredInfo,InsuredCAInfo  insuredCAInfo, InsuredGLInfo insuredGLInfo) throws Exception {
         // TODO Auto-generated method stub
         boolean flag = false;
-        if(mapper.modify(insuredInfo) > 0){
+        int flagNumber = 0;
+        if(mapper.modify(insuredInfo) > 0 ){
+            flagNumber ++;
+        }
+        if(mapper.modifyCA(insuredCAInfo) > 0 ){
+            flagNumber ++;
+        }
+        if(mapper.modifyGL(insuredGLInfo) > 0 ){
+            flagNumber ++;
+        }
+        if(flagNumber >= 3 ){
             flag = true;
         }
         return flag;

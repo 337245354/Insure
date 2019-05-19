@@ -17,14 +17,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="addCA" parameterType="InsuredCAInfo">
 		insert into insureinfodb.caline_info (insuredId,vehicleModel,vehicleBuyInTime,limit_Ext,carDamage,carFire,carGlass,comment)
-		values(#{insuredId},#{vehicleModel},#{vehicleBuyInTime},#{limit},#{carDamage},
+		values(#{insuredId},#{vehicleModel},#{vehicleBuyInTime},#{limitCA},#{carDamage},
 		#{carFire},#{carGlass},#{comment})
 	</insert>
 
 	<insert id="addGL" parameterType="InsuredGLInfo">
 		insert into insureinfodb.glline_info (insuredId,insuredPeople,insuredPeopleID,insuredPeopleAge,insuredPeopleGender,limit_Ext,peopleAccident,peopleIllness,comment)
 		values(#{insuredId},#{insuredPeople},#{insuredPeopleID},#{insuredPeopleAge},#{insuredPeopleGender},
-		#{limit},#{peopleAccident},#{peopleIllness},#{comment})
+		#{limitGL},#{peopleAccident},#{peopleIllness},#{comment})
 	</insert>
 	
 	<update id="modify" parameterType="InsuredInfo">
@@ -50,7 +50,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="versionId != null">versionId=#{versionId},</if>
 		</trim>
 	</update>
-	
+
+	<update id="modifyCA" parameterType="InsuredCAInfo">
+		update insureinfodb.caline_info
+		<trim prefix="set" suffixOverrides="," suffix="where insuredId=#{id}">
+			<if test="vehicleModel != null">vehicleModel=#{vehicleModel},</if>
+			<if test="vehicleBuyInTime != null">vehicleBuyInTime=#{vehicleBuyInTime},</if>
+			<if test="limitCA != null">limit_Ext=#{limitCA},</if>
+			<if test="carDamage != null">carDamage=#{carDamage},</if>
+			<if test="carFire != null">carFire=#{carFire},</if>
+			<if test="carGlass != null">carGlass=#{carGlass},</if>
+			<if test="comment != null">comment=#{comment},</if>
+		</trim>
+	</update>
+
+	<update id="modifyGL" parameterType="InsuredGLInfo">
+		update insureinfodb.glline_info
+		<trim prefix="set" suffixOverrides="," suffix="where insuredId=#{id}">
+			<if test="insuredPeople != null">insuredPeople=#{insuredPeople},</if>
+			<if test="insuredPeopleID != null">insuredPeopleID=#{insuredPeopleID},</if>
+			<if test="insuredPeopleAge != null">insuredPeopleAge=#{insuredPeopleAge},</if>
+			<if test="insuredPeopleGender != null">insuredPeopleGender=#{insuredPeopleGender},</if>
+			<if test="limitGL != null">limit_Ext=#{limitGL},</if>
+			<if test="peopleAccident != null">peopleAccident=#{peopleAccident},</if>
+			<if test="peopleIllness != null">peopleIllness=#{peopleIllness},</if>
+			<if test="comment != null">comment=#{comment},</if>
+		</trim>
+	</update>
+
 	<delete id="deleteAppInfoById" parameterType="Integer">
 		delete from app_info where id = #{id}
 	</delete>
@@ -127,7 +154,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="getInsuredCAInfo" resultType="InsuredCAInfo">
-		select a.id,a.insuredId,a.vehicleModel,a.vehicleBuyInTime,a.limit_Ext as 'limit',a.carDamage,a.carFire,a.carGlass,a.comment
+		select a.id,a.insuredId,a.vehicleModel,a.vehicleBuyInTime,a.limit_Ext as 'limitCA',a.carDamage,a.carFire,a.carGlass,a.comment
 		from insureinfodb.caline_info a
 		<trim prefix="where" prefixOverrides="and | or">
 			<if test="id != null">
@@ -137,7 +164,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="getInsuredGLInfo" resultType="InsuredGLInfo">
-		select *,a.limit_Ext as 'limit'
+		select *,a.limit_Ext as 'limitGL'
 		from insureinfodb.glline_info a
 		<trim prefix="where" prefixOverrides="and | or">
 			<if test="id != null">

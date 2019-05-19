@@ -600,12 +600,72 @@ public class AppController {
         return "developer/policyFound";
     }
 
-	/**
-	 * 修改app信息，包括：修改app基本信息（appInfo）和修改版本信息（appVersion）
-	 * 分为两步实现：
-	 * 1 修改app基本信息（appInfo）
-	 * 2 修改版本信息（appVersion）
-	 */
+    /**
+     * 修改policyInfo信息，包括policy基本信息和其他信息
+     * 仅仅显示页面，不涉及具体业务
+     * @return
+     */
+    @RequestMapping(value="/policymodify/{id}")
+    public String Insuredmodify(@PathVariable String id,Model model){
+        InsuredInfo insuredInfo = null;
+        InsuredCAInfo insuredCAInfo = null;
+        InsuredGLInfo insuredGLInfo = null;
+        try {
+            insuredInfo = insuredInfoService.getInsuredInfo(Integer.parseInt(id),null);
+            insuredCAInfo = insuredInfoService.getInsuredCAInfo(Integer.parseInt(id));
+            insuredGLInfo = insuredInfoService.getInsuredGLInfo(Integer.parseInt(id));
+
+        }catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        model.addAttribute(insuredInfo);
+        model.addAttribute(insuredCAInfo);
+        model.addAttribute(insuredGLInfo);
+        return "developer/policyModify";
+    }
+
+
+    /**
+     * 修改policyInfo信息，包括policy基本信息和其他信息
+     * 修改的具体逻辑
+     * @return
+     */
+
+    @RequestMapping(value = "/policymodify/modifysave" , method = RequestMethod.POST)
+    public  String modifysave(InsuredInfo insuredInfo,InsuredCAInfo insuredCAInfo,InsuredGLInfo insuredGLInfo,Model model, HttpSession session, HttpServletRequest request) {
+        String n = "we";
+
+        try {
+
+
+            //rating engine
+
+            insuredInfo.setPremium(RatingController.rateEngine(session));
+            session.setAttribute(Constants.NEW_POLICY,insuredInfo);
+            if(
+                    insuredInfoService.modify(insuredInfo,insuredCAInfo,insuredGLInfo)
+//                    insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
+                    ){   //insert into DB
+//				session.removeAttribute(Constants.NEW_POLICY);
+//				session.removeAttribute(Constants.CALINE);
+//				session.removeAttribute(Constants.GLLINE);
+                return "developer/policyModify";
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return "developer/policyModify";
+    }
+
+
+    /**
+     * 修改app信息，包括：修改app基本信息（appInfo）和修改版本信息（appVersion）
+     * 分为两步实现：
+     * 1 修改app基本信息（appInfo）
+     * 2 修改版本信息（appVersion）
+     */
 	
 	/**
 	 * 修改appInfo信息（跳转到修改appInfo页面）
@@ -783,7 +843,8 @@ public class AppController {
      * @return
      */
 
-    @RequestMapping(value = "/insuredCAinfoaddsave", method = RequestMethod.POST)
+//    @RequestMapping(value = "/insuredCAinfoaddsave", method = RequestMethod.POST)
+    @RequestMapping(value = "/insuredCAinfoaddsave")
     public  String InsuredCAInfoaddSave(InsuredCAInfo insuredCAInfo, HttpSession session, HttpServletRequest request) {
         String buyerName = null;
         try {
