@@ -36,5 +36,10 @@ $(".showGLLineCoverage").ready(function(){
 });
 
 $("#back").on("click",function(){
-    window.location.href = "./policyBasicInfo";
+    window.location.href = "../getinsuredinfolist";
 });
+
+$("#save").on("click",function(){
+    window.location.href = "./modifysave";
+});
+

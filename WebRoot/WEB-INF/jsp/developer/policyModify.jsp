@@ -164,7 +164,7 @@
             <div class="col-md-offset-6 form-group">
                 <label for="dtp_input2" class="col-sm-2 control-label">车辆买入时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
-                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                     data-link-field="dtp_input22" data-link-format="yyyy-mm-dd">
                     <input class="form-control" size="1" type="text" name="vehicleBuyInTime"  value="${insuredCAInfo.vehicleBuyInTime }">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>

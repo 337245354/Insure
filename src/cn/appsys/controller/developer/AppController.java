@@ -1,6 +1,7 @@
 package cn.appsys.controller.developer;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -637,8 +638,6 @@ public class AppController {
         String n = "we";
 
         try {
-
-
             //rating engine
 
             insuredInfo.setPremium(RatingController.rateEngine(session));
