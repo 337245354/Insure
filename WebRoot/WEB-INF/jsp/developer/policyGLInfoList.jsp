@@ -57,29 +57,29 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-            <div class="x_content">
-                <p class="text-muted font-13 m-b-30"></p>
-                <div id="datatable-responsive_wrapper"
-                     class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a href="${pageContext.request.contextPath}/dev/flatform/app/appinfoadd"
-                               class="btn btn-success btn-sm">新增APP基础信息</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="x_content">--%>
+                <%--<p class="text-muted font-13 m-b-30"></p>--%>
+                <%--<div id="datatable-responsive_wrapper"--%>
+                     <%--class="dataTables_wrapper form-inline dt-bootstrap no-footer">--%>
+                    <%--<div class="row">--%>
+                        <%--<div class="col-sm-12">--%>
+                            <%--<a href="${pageContext.request.contextPath}/dev/flatform/app/appinfoadd"--%>
+                               <%--class="btn btn-success btn-sm">新增APP基础信息</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         <form class="form-label-left" action="insuredGLinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">被保人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="被保人姓名" name="insuredPeople" ${insuredGLInfo.insuredPeople }>
+                    <input type="text" class="form-control" id="inputEmail" placeholder="被保人姓名" name="insuredPeople" required ${insuredGLInfo.insuredPeople }>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">被保人身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="被保人身份证号"  name="insuredPeopleID" ${insuredGLInfo.insuredPeopleID }>
+                    <input type="text" class="form-control" id="inputPassword" placeholder="被保人身份证号"  name="insuredPeopleID" required ${insuredGLInfo.insuredPeopleID }>
                 </div>
             </div>
             <div class="row"></div>
@@ -87,13 +87,13 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">被保人年龄</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="被保人年龄" name="insuredPeopleAge" ${insuredGLInfo.insuredPeopleAge }>
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="被保人年龄" name="insuredPeopleAge" required ${insuredGLInfo.insuredPeopleAge }>
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">赔付额上限</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="赔付额上限"  name="limitGL" ${insuredGLInfo.limitGL }>
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="赔付额上限"  name="limitGL" required ${insuredGLInfo.limitGL }>
                 </div>
             </div>
             <div class="row"></div>
@@ -102,7 +102,7 @@
             <div class="col-md-offset-6 hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">genderhidden</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender" ${insuredGLInfo.insuredPeopleGender }>
+                    <input type="text" class="form-control " id="genderhidden"   name="insuredPeopleGender"  ${insuredGLInfo.insuredPeopleGender }>
                 </div>
             </div>
 
@@ -130,14 +130,14 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字" name="comment" ${insuredGLInfo.comment }></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字" name="comment" required ${insuredGLInfo.comment }></textarea>
                 </div>
             </div>
             <div class="row"></div>
             <br>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button id="send" type="submit" class="btn btn-success">保存</button>
+                    <button id="send" type="submit" class="btn btn-success">下一页</button>
                     <button type="button" class="btn btn-primary" id="back">清除</button>
                 </div>
             </div>

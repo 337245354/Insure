@@ -39,8 +39,7 @@
 			<div class="col-md-3 left_col menu_fixed">
 				<div class="left_col scroll-view">
 					<div class="navbar nav_title" style="border: 0;">
-						<a href="${pageContext.request.contextPath }/dev/flatform/main" class="site_title"><i class="fa fa-paw"></i> <span>APP
-								BMS</span>
+						<a href="${pageContext.request.contextPath }/dev/flatform/main" class="site_title"><i class="fa fa-paw"></i> <span> POLICYCENTER </span>
 						</a>
 					</div>
 
@@ -68,24 +67,24 @@
 						<div class="menu_section">
 							<h3>${devUserSession.devName }</h3>
 							<ul class="nav side-menu">
-								<li><a><i class="fa fa-home"></i> APP账户管理 <span
+								<li><a><i class="fa fa-home"></i> 保单信息账户管理 <span
 										class="fa fa-chevron-down"></span>
 								</a>
 									<ul class="nav child_menu">
-										<li><a href="javascript:;">APP开发者账户申请</a>
-										</li>
+										<%--<li><a href="javascript:;">APP开发者账户申请</a>--%>
+										<%--</li>--%>
 										<li><a href="javascript:;">个人账户信息维护</a>
 										</li>
 										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/getinsuredinfolist">保单信息列表</a>
 										</li>
 									</ul></li>
-								<li><a><i class="fa fa-edit"></i> APP应用管理<span
-										class="fa fa-chevron-down"></span>
-								</a>
-									<ul class="nav child_menu">
-										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/list">APP维护</a>
-										</li>
-									</ul></li>
+								<%--<li><a><i class="fa fa-edit"></i> APP应用管理<span--%>
+										<%--class="fa fa-chevron-down"></span>--%>
+								<%--</a>--%>
+									<%--<ul class="nav child_menu">--%>
+										<%--<li><a href="${pageContext.request.contextPath }/dev/flatform/app/list">APP维护</a>--%>
+										<%--</li>--%>
+									<%--</ul></li>--%>
 								<li><a><i class="fa fa-edit"></i> 保单管理 <span
 										class="fa fa-chevron-down"></span>
 								</a>

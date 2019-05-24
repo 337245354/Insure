@@ -64,29 +64,29 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_content">
-                <p class="text-muted font-13 m-b-30"></p>
-                <div id="datatable-responsive_wrapper"
-                     class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a href="${pageContext.request.contextPath}/dev/flatform/app/appinfoadd"
-                               class="btn btn-success btn-sm">新增APP基础信息</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <%--<p class="text-muted font-13 m-b-30"></p>--%>
+                <%--<div id="datatable-responsive_wrapper"--%>
+                     <%--class="dataTables_wrapper form-inline dt-bootstrap no-footer">--%>
+                    <%--<div class="row">--%>
+                        <%--<div class="col-sm-12">--%>
+                            <%--<a href="${pageContext.request.contextPath}/dev/flatform/app/appinfoadd"--%>
+                               <%--class="btn btn-success btn-sm">新增APP基础信息</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
         <form class="form-label-left" action="insuredbasicinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group" >
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${insuredInfo.buyerName }>
+                    <input type="text" class="form-control" id="inputEmail" placeholder="购买保险人姓名" name="buyerName" ${insuredInfo.buyerName } required>
                 </div>
             </div>
             <div class="form-group col-md-offset-6">
                 <label for="inputPassword" class="col-sm-2 control-label">购买者身份证号</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号"  name="buyerID" ${insuredInfo.buyerID }>
+                    <input type="text" class="form-control" id="inputPassword" placeholder="购买保险人身份证号"  name="buyerID" ${insuredInfo.buyerID }required>
                 </div>
             </div>
             <div class="row"></div>
@@ -94,46 +94,46 @@
             <div>
                 <label for="inputEmail2" class="col-sm-1 control-label">购买者联系方式</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" ${insuredInfo.buyerPhone }>
+                    <input type="text" class="form-control" id="inputEmail2" placeholder="购买保险人联系方式" name="buyerPhone" ${insuredInfo.buyerPhone }required>
                 </div>
             </div>
             <div class="col-md-offset-6">
                 <label for="inputPassword2" class="col-sm-2 control-label">受益人姓名</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" ${insuredInfo.beneficiaryName }>
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="受益人姓名"  name="beneficiaryName" ${insuredInfo.beneficiaryName }required>
                 </div>
             </div>
             <div class="row"></div>
             <br>
-            <div>
-                <label for="inputEmail2" class="col-sm-1 control-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="col-md-offset-6">
-                <label for="inputPassword" class="col-sm-2 control-label">保险业务</label>
-                <div class="form-group col-sm-3">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="1"  name="hasCA" ${insuredInfo.hasCA}>车险
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="1"  name="hasGL" ${insuredInfo.hasGL}>寿险
-                    </label>
-                </div>
-            </div>
-            <div class="row"></div>
-            <br>
+            <%--<div>--%>
+                <%--<label for="inputEmail2" class="col-sm-1 control-label">Email</label>--%>
+                <%--<div class="col-sm-3">--%>
+                    <%--<input type="text" class="form-control" id="inputEmail3" placeholder="Email">--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-offset-6">--%>
+                <%--<label for="inputPassword" class="col-sm-2 control-label">保险业务</label>--%>
+                <%--<div class="form-group col-sm-3">--%>
+                    <%--<label class="checkbox-inline">--%>
+                        <%--<input type="checkbox" value="1"  name="hasCA" ${insuredInfo.hasCA}>车险--%>
+                    <%--</label>--%>
+                    <%--<label class="checkbox-inline">--%>
+                        <%--<input type="checkbox" value="1"  name="hasGL" ${insuredInfo.hasGL}>寿险--%>
+                    <%--</label>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="row"></div>--%>
+            <%--<br>--%>
             <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
-            <div class="col-md-offset-6 hidden">
+            <div class="col-md-offset-6 hidden ">
                 <label for="inputPassword2" class="col-sm-2 control-label">paymethodhidden</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control " id="paymethodhidden"   name="paymentType" ${insuredInfo.paymentType }>
+                    <input type="text" class="form-control " id="paymethodhidden"   name="paymentType"   ${insuredInfo.paymentType } >
                 </div>
             </div>
 
             <div class="form-group col-sm-3 choicePayMathod" id="paymethod" >
-                <label class="radio-inline">
+                <label class="radio-inline" >
                     <input type="radio" value="1" name="payment">现金
                 </label>
                 <label class="radio-inline">
@@ -146,8 +146,8 @@
             <div class="col-md-offset-6 form-group">
                 <label for="dtp_input2" class="col-sm-2 control-label">保单开始时间</label>
                 <div class="input-group date form_date col-sm-6" data-date="" data-date-format="MM dd yyyy"
-                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="1" type="text" value="" name="startDate" ${insuredInfo.startDate }>
+                     data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" >
+                    <input class="form-control" size="1" type="text" value="" name="startDate" required ${insuredInfo.startDate }>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
@@ -158,7 +158,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字" name="comment" ${insuredInfo.comment }></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字" name="comment" ${insuredInfo.comment } required></textarea>
                 </div>
             </div>
             <div class="row"></div>
@@ -166,7 +166,7 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <%--<button type="submit" class="btn btn-default">提交</button>--%>
-                        <button id="send" type="submit" class="btn btn-success">保存</button>
+                        <button id="send" type="submit" class="btn btn-success">下一页</button>
                         <button type="button" class="btn btn-primary" id="back">清除</button>
                 </div>
             </div>

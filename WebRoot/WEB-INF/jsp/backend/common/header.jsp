@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>APP后台管理系统</title>
+    <title>保险保单后台管理系统</title>
 
     <!-- Bootstrap -->
     <link href="${pageContext.request.contextPath }/statics/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="${pageContext.request.contextPath }/underwriter/backend/main" class="site_title"><i class="fa fa-paw"></i> <span>APP BMS</span></a>
+              <a href="${pageContext.request.contextPath }/underwriter/backend/main" class="site_title"><i class="fa fa-paw"></i> <span>POLICYCENTER</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -62,9 +62,9 @@
               <div class="menu_section">
                 <h3>${userSession.userName }</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> APP管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i> 保单管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/list">APP审核</a></li>
+                      <%--<li><a href="${pageContext.request.contextPath }/underwriter/backend/app/list">APP审核</a></li>--%>
                       <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/getinsuredinfolist">保单信息列表</a></li>
                       <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/formMain">保单统计</a></li>
                       <li><a href="javascript:;">广告推广</a></li>
@@ -73,13 +73,13 @@
                   <li><a><i class="fa fa-edit"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="javascript:;">后台用户管理</a></li>
-                      <li><a href="javascript:;">开发者资质审核</a></li>
+                      <li><a href="javascript:;">经销商资质审核</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bug"></i> 基础数据维护 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="javascript:;">数据字典</a></li>
-                      <li><a href="javascript:;">APP分类管理</a></li>
+                      <%--<li><a href="javascript:;">APP分类管理</a></li>--%>
                     </ul>
                   </li>
                 </ul>

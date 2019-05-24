@@ -57,18 +57,18 @@
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-            <div class="x_content">
-                <p class="text-muted font-13 m-b-30"></p>
-                <div id="datatable-responsive_wrapper"
-                     class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a href="${pageContext.request.contextPath}/dev/flatform/app/appinfoadd"
-                               class="btn btn-success btn-sm">新增APP基础信息</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="x_content">--%>
+                <%--<p class="text-muted font-13 m-b-30"></p>--%>
+                <%--<div id="datatable-responsive_wrapper"--%>
+                     <%--class="dataTables_wrapper form-inline dt-bootstrap no-footer">--%>
+                    <%--<div class="row">--%>
+                        <%--<div class="col-sm-12">--%>
+                            <%--<a href="${pageContext.request.contextPath}/dev/flatform/app/appinfoadd"--%>
+                               <%--class="btn btn-success btn-sm">新增APP基础信息</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         <form class="form-label-left" action="insuredOverviewinfoaddsave" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-1 control-label">购买保险人姓名</label>
@@ -98,20 +98,20 @@
             </div>
             <div class="row"></div>
             <br>
-            <div>
-                <label for="inputEmail2" class="col-sm-1 control-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="col-md-offset-6">
-                <label for="inputPassword2" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-            </div>
-            <div class="row"></div>
-            <br>
+            <%--<div>--%>
+                <%--<label for="inputEmail2" class="col-sm-1 control-label">Email</label>--%>
+                <%--<div class="col-sm-3">--%>
+                    <%--<input type="text" class="form-control" id="inputEmail3" placeholder="Email">--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-offset-6">--%>
+                <%--<label for="inputPassword2" class="col-sm-2 control-label">Password</label>--%>
+                <%--<div class="col-sm-6">--%>
+                    <%--<input type="text" class="form-control" id="inputPassword3" placeholder="Password">--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="row"></div>--%>
+            <%--<br>--%>
             <label for="inputPassword2" class="col-sm-1 control-label">支付方式</label>
             <div class="col-md-offset-6 showPayMathod hidden">
                 <label for="inputPassword2" class="col-sm-2 control-label">paymethodhidden</label>
