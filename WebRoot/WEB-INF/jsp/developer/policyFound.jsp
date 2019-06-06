@@ -235,7 +235,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">基本信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="comment" >${insuredInfo.comment }</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="commentCom" >${insuredInfo.commentCom }</textarea>
                 </div>
             </div>
             <div class="row"></div>
@@ -243,7 +243,7 @@
             <div>
                 <label for="inputEmail24" class="col-sm-1 control-label">车险信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail24" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="comment" >${insuredCAInfo.comment }</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail24" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="commentCA" >${insuredCAInfo.commentCA }</textarea>
                 </div>
             </div>
             <div class="row"></div>
@@ -251,7 +251,7 @@
             <div>
                 <label for="inputEmail34" class="col-sm-1 control-label">寿险信息备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="comment">${insuredGLInfo.comment}</textarea>
+                    <textarea type="text" class="form-control" id="inputEmail34" rows="3" placeholder="备注,最多可填100字"  readonly="readonly" name="commentGL">${insuredGLInfo.commentGL}</textarea>
                 </div>
             </div>
             <div class="row"></div>

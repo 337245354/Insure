@@ -111,7 +111,7 @@
             <div>
                 <label for="inputEmail4" class="col-sm-1 control-label">备注</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"  name="comment" required ${insuredCAInfo.comment }></textarea>
+                    <textarea type="text" class="form-control" id="inputEmail4" rows="5" placeholder="备注,最多可填100字"  name="commentCA" required ${insuredCAInfo.commentCA }></textarea>
                 </div>
             </div>
             <div class="row"></div>

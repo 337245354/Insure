@@ -11,7 +11,7 @@ public class InsuredCAInfo {
     private Boolean carDamage;//是否购买车损险
     private Boolean carFire;//是否购买自燃险
     private Boolean carGlass;//是否购买玻璃险
-    private String comment;//备注
+    private String commentCA;//备注
 
     public Integer getId() {
         return id;
@@ -77,12 +77,12 @@ public class InsuredCAInfo {
         this.carGlass = carGlass;
     }
 
-    public String getComment() {
-        return comment;
+    public String getCommentCA() {
+        return commentCA;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setCommentCA(String commentCA) {
+        this.commentCA = commentCA;
     }
 
 }

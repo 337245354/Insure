@@ -1,7 +1,5 @@
 package cn.appsys.pojo;
 
-import java.util.Date;
-
 public class InsuredGLInfo {
     private Integer id;//主键id
     private Integer insuredId;//外键，保险单号，来源于：insured_info表的主键id
@@ -12,7 +10,7 @@ public class InsuredGLInfo {
     private Integer limitGL;//保额赔付上限（元人民币）
     private Boolean peopleAccident;//是否购买人身意外险（默认值false：否(0)，true：是(1)）
     private Boolean peopleIllness;//是否购买重疾险（默认值false：否(0)，true：是(1)）
-    private String comment;//备注
+    private String commentGL;//备注
 
     public Integer getInsuredId() {
         return insuredId;
@@ -87,12 +85,12 @@ public class InsuredGLInfo {
         this.id = id;
     }
 
-    public String getComment() {
-        return comment;
+    public String getCommentGL() {
+        return commentGL;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setCommentGL(String commentGL) {
+        this.commentGL = commentGL;
     }
 
 }

@@ -94,7 +94,7 @@ CREATE TABLE `insured_info` (
   `policyStatus` bigint(10) DEFAULT NULL COMMENT '状态（来源于：data_dictionary，1 草稿 2 待审核 3 审核未通过 4 审核已通过 5 已生效保单）',
   `hasCA` bit(1) DEFAULT NULL COMMENT '是否需要购买车险（默认值false：否(0)，true：是(1)）',
   `hasGL` bit(1) DEFAULT NULL COMMENT '是否需要购买寿险（默认值false：否(0)，true：是(1)）',
-  `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
+  `commentCom` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   `updateDate` date DEFAULT NULL COMMENT '变更日期',
   `startDate` datetime DEFAULT NULL COMMENT '开始时间',
   `endDate` datetime DEFAULT NULL COMMENT '结束时间',
@@ -113,7 +113,7 @@ CREATE TABLE `insured_info` (
 
 /*Data for the table `insured_info` */
 
-insert  into `insured_info`(`id`,`buyerName`,`buyerID`,`buyerPhone`,`policyStatus`,`hasCA`,`hasGL`,`comment`,`updateDate`,`startDate`,`endDate`,`beneficiaryName`,`premium`,`paymentType`,`isApproved`,`isPaid`,`createdBy`,`creationDate`,`modifyBy`,`modifyDate`,`versionId`) values
+insert  into `insured_info`(`id`,`buyerName`,`buyerID`,`buyerPhone`,`policyStatus`,`hasCA`,`hasGL`,`commentCom`,`updateDate`,`startDate`,`endDate`,`beneficiaryName`,`premium`,`paymentType`,`isApproved`,`isPaid`,`createdBy`,`creationDate`,`modifyBy`,`modifyDate`,`versionId`) values
   (5001,'小电荔','310105201506292345','18616666666',2,1,1,'It is good',NULL,'2019-01-14 18:11:47','2020-01-14 18:11:47','大电力',1700,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),
   (5002,'小电荔','310105201506292345','18616666666',5,0,0,'It is 1',NULL,'2019-01-15 18:11:47','2020-01-15 18:11:47','大电力',2000,NULL,0,0,'test001','2019-01-13 15:11:47',NULL,NULL,1),
   (5003,'小橙子','310105201506292345','18616666666',5,1,1,'It is 2',NULL,'2019-01-16 18:11:47','2020-02-16 18:11:47','大电力',1500,1,1,1,'test001','2019-01-13 15:11:47',NULL,NULL,1),
@@ -137,7 +137,7 @@ CREATE TABLE `CALine_info` (
   `carDamage` bit(1) DEFAULT NULL COMMENT '是否购买车损险（默认值false：否(0)，true：是(1)）',
   `carFire` bit(1) DEFAULT NULL COMMENT '是否购买自燃险（默认值false：否(0)，true：是(1)）',
   `carGlass` bit(1) DEFAULT NULL COMMENT '是否购买玻璃险（默认值false：否(0)，true：是(1)）',
-  `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
+  `commentCA` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -160,7 +160,7 @@ CREATE TABLE `GLLine_info` (
   `limit_Ext` bigint(30) DEFAULT NULL COMMENT '保额赔付上限（元人民币）',
   `peopleAccident` bit(1) DEFAULT NULL COMMENT '是否购买人身意外险（默认值false：否(0)，true：是(1)）',
   `peopleIllness` bit(1) DEFAULT NULL COMMENT  '是否购买重疾险（默认值false：否(0)，true：是(1)）',
-  `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
+  `commentGL` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '备注及风险信息',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

@@ -25,7 +25,7 @@ public class InsuredInfo {
     private Integer modifyBy;//更新者
     private Date modifyDate;//更新时间
     private Integer versionId;//最新的版本id
-    private String comment;//备注
+    private String commentCom;//备注
 
 
     public Integer getId() {
@@ -180,12 +180,12 @@ public class InsuredInfo {
         this.versionId = versionId;
     }
 
-    public String getComment() {
-        return comment;
+    public String getCommentCom() {
+        return commentCom;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setCommentCom(String commentCom) {
+        this.commentCom = commentCom;
     }
 
     public String getHasCA() {

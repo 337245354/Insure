@@ -6,25 +6,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="cn.appsys.dao.insuredinfo.InsuredInfoMapper">
 
 	<insert id="add" parameterType="InsuredInfo">
-		insert into insureinfodb.insured_info (buyerName,buyerID,buyerPhone,policyStatus,comment,updateDate,
+		insert into insureinfodb.insured_info (buyerName,buyerID,buyerPhone,policyStatus,commentCom,updateDate,
 											   startDate,endDate,beneficiaryName,premium,paymentType,isApproved,
 											   isPaid,createdBy,creationDate,modifyBy,modifyDate,versionId)
-				values(#{buyerName},#{buyerID},#{buyerPhone},#{policyStatus},#{comment},
+				values(#{buyerName},#{buyerID},#{buyerPhone},#{policyStatus},#{commentCom},
 					   #{updateDate},#{startDate},#{endDate},#{beneficiaryName},#{premium},
 					   #{paymentType},#{isApproved},#{isPaid},#{createdBy},
 					   #{creationDate},#{modifyBy},#{modifyDate},#{versionId})
 	</insert>
 
 	<insert id="addCA" parameterType="InsuredCAInfo">
-		insert into insureinfodb.caline_info (insuredId,vehicleModel,vehicleBuyInTime,limit_Ext,carDamage,carFire,carGlass,comment)
+		insert into insureinfodb.caline_info (insuredId,vehicleModel,vehicleBuyInTime,limit_Ext,carDamage,carFire,carGlass,commentCA)
 		values(#{insuredId},#{vehicleModel},#{vehicleBuyInTime},#{limitCA},#{carDamage},
-		#{carFire},#{carGlass},#{comment})
+		#{carFire},#{carGlass},#{commentCA})
 	</insert>
 
 	<insert id="addGL" parameterType="InsuredGLInfo">
-		insert into insureinfodb.glline_info (insuredId,insuredPeople,insuredPeopleID,insuredPeopleAge,insuredPeopleGender,limit_Ext,peopleAccident,peopleIllness,comment)
+		insert into insureinfodb.glline_info (insuredId,insuredPeople,insuredPeopleID,insuredPeopleAge,insuredPeopleGender,limit_Ext,peopleAccident,peopleIllness,commentGL)
 		values(#{insuredId},#{insuredPeople},#{insuredPeopleID},#{insuredPeopleAge},#{insuredPeopleGender},
-		#{limitGL},#{peopleAccident},#{peopleIllness},#{comment})
+		#{limitGL},#{peopleAccident},#{peopleIllness},#{commentGL})
 	</insert>
 	
 	<update id="modify" parameterType="InsuredInfo">
@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="buyerID != null">buyerID=#{buyerID},</if>
 			<if test="buyerPhone != null">buyerPhone=#{buyerPhone},</if>
 			<if test="policyStatus != null">policyStatus=#{policyStatus},</if>
-			<if test="comment != null">comment=#{comment},</if>
+			<if test="commentCom != null">commentCom=#{commentCom},</if>
 			<if test="updateDate != null">updateDate=#{updateDate},</if>
 			<if test="startDate != null">startDate=#{startDate},</if>
 			<if test="endDate != null">endDate=#{endDate},</if>
@@ -60,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="carDamage != null">carDamage=#{carDamage},</if>
 			<if test="carFire != null">carFire=#{carFire},</if>
 			<if test="carGlass != null">carGlass=#{carGlass},</if>
-			<if test="comment != null">comment=#{comment},</if>
+			<if test="commentCA != null">commentCA=#{commentCA},</if>
 		</trim>
 	</update>
 
@@ -74,7 +74,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="limitGL != null">limit_Ext=#{limitGL},</if>
 			<if test="peopleAccident != null">peopleAccident=#{peopleAccident},</if>
 			<if test="peopleIllness != null">peopleIllness=#{peopleIllness},</if>
-			<if test="comment != null">comment=#{comment},</if>
+			<if test="commentGL != null">commentGL=#{commentGL},</if>
 		</trim>
 	</update>
 
@@ -154,7 +154,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="getInsuredCAInfo" resultType="InsuredCAInfo">
-		select a.id,a.insuredId,a.vehicleModel,a.vehicleBuyInTime,a.limit_Ext as 'limitCA',a.carDamage,a.carFire,a.carGlass,a.comment
+		select a.id,a.insuredId,a.vehicleModel,a.vehicleBuyInTime,a.limit_Ext as 'limitCA',a.carDamage,a.carFire,a.carGlass,a.commentCA
 		from insureinfodb.caline_info a
 		<trim prefix="where" prefixOverrides="and | or">
 			<if test="id != null">

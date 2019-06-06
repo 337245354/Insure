@@ -641,8 +641,10 @@ public class AppController {
             //rating engine
 
             insuredInfo.setPremium(RatingController.rateEngine(session));
-            session.setAttribute(Constants.NEW_POLICY,insuredInfo);
-            if(
+			insuredInfo.setPolicyStatus(2);
+            session.setAttribute(Constants.NEW_POLICY,insuredInfo);//
+
+			if(
                     insuredInfoService.modify(insuredInfo,insuredCAInfo,insuredGLInfo)
 //                    insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
                     ){   //insert into DB
@@ -926,7 +928,7 @@ public class AppController {
 			InsuredGLInfo insuredGLOverviewInfo = (InsuredGLInfo) session.getAttribute("GLLine");
 			insuredGLInfo = insuredGLOverviewInfo;
 			}
-			insuredInfo.setPolicyStatus(2);
+			insuredInfo.setPolicyStatus(2);    //
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
