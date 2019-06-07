@@ -114,7 +114,7 @@ public class AppController {
 		//总页数
 		PageSupport pages = new PageSupport();
 		pages.setCurrentPageNo(currentPageNo);
-		pages.setPageSize(pageSize);
+		pages.setPageSize(pageSize);//
 		pages.setTotalCount(totalCount);
 		int totalPageCount = pages.getTotalPageCount();
 		//控制首页和尾页
@@ -300,7 +300,7 @@ public class AppController {
 		//总页数
 		PageSupport pages = new PageSupport();
 		pages.setCurrentPageNo(currentPageNo);
-		pages.setPageSize(pageSize);
+		pages.setPageSize(pageSize);//
 		pages.setTotalCount(totalCount);
 		int totalPageCount = pages.getTotalPageCount();
 		//控制首页和尾页
@@ -310,7 +310,7 @@ public class AppController {
 			currentPageNo = totalPageCount;
 		}
 		try {
-			insuredInfoList = insuredInfoService.getInsuredInfoList(_id,queryStatus);
+			insuredInfoList = insuredInfoService.getInsuredInfoList(_id,queryStatus,currentPageNo, pageSize);
 			policyStatusList = this.getInsuredDataDictionaryList("POLICY_STATUS");
 			paymentTypeList = this.getInsuredDataDictionaryList("PAYMENT_TYPE");
 		} catch (Exception e) {

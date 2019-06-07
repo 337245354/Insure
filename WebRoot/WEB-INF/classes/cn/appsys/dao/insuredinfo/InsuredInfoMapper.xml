@@ -122,7 +122,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				and a.versionId = #{versionId}
 			</if>
 		</trim>
-
+		order by creationDate DESC limit #{from},#{pageSize}
 	</select>
 
 	<select id="getInsuredInfoCount" resultType="Int">

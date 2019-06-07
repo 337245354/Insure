@@ -70,7 +70,7 @@ public interface InsuredInfoService {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus)throws Exception;
+	public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus,Integer currentPageNo,Integer pageSize)throws Exception;
 
 
 

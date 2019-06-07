@@ -203,7 +203,7 @@ public class AppCheckController {
 			currentPageNo = totalPageCount;
 		}
 		try {
-			insuredInfoList = insuredInfoService.getInsuredInfoList(_id,queryStatus);
+			insuredInfoList = insuredInfoService.getInsuredInfoList(_id,queryStatus,currentPageNo, pageSize);
 			policyStatusList = this.getInsuredDataDictionaryList("POLICY_STATUS");
 			paymentTypeList = this.getInsuredDataDictionaryList("PAYMENT_TYPE");
 		} catch (Exception e) {
@@ -229,8 +229,10 @@ public class AppCheckController {
 		List<InsuredCAInfo> insuredCAInfoList = null;
 		List<DataDictionary> policyStatusList = null;
 		List<DataDictionary> paymentTypeList = null;
+		int ONE = Constants.ONE;
+		int pageSizeForAll = Constants.pageSizeForAll;
 		try {
-			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null);
+			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null,ONE,pageSizeForAll);
 //			policyStatusList = this.getInsuredDataDictionaryList("POLICY_STATUS");
 //			paymentTypeList = this.getInsuredDataDictionaryList("PAYMENT_TYPE");
 		} catch (Exception e) {
@@ -253,9 +255,10 @@ public class AppCheckController {
 	public Object getPremiumListByDateToJson(){
 		List<InsuredInfo> insuredInfoList = null;                              //insuredInfoList is the List from DB
 		List<FormDate> formDateList = new ArrayList<>();                        //formDateList is a totally new list for tran to json
-
+		int ONE = Constants.ONE;
+		int pageSizeForAll = Constants.pageSizeForAll;
 		try {
-			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null);
+			insuredInfoList = insuredInfoService.getInsuredInfoList(null,null,ONE,pageSizeForAll);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -114,11 +114,11 @@ public class InsuredInfoServiceImpl implements InsuredInfoService {
     }
 
     @Override
-    public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus) throws Exception {
+    public List<InsuredInfo> getInsuredInfoList(Integer id,Integer policyStatus,Integer currentPageNo,Integer pageSize) throws Exception {
         // TODO Auto-generated method stub
         return mapper.getInsuredInfoList(id,null,policyStatus,
                 null,null,null,null,
-                null,null,null);
+                null,null,null, (currentPageNo-1)*pageSize, pageSize);
     }
 
     @Override

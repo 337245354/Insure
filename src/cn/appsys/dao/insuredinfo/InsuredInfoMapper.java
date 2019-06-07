@@ -36,7 +36,9 @@ public interface InsuredInfoMapper {
                                         @Param(value = "premium") BigDecimal queryPremium,
                                         @Param(value = "isApproved") Boolean queryIsApproved,
                                         @Param(value = "isPaid") Boolean queryIsPaid,
-										@Param(value = "versionId")	Integer queryVersionId)throws Exception;
+										@Param(value = "versionId")	Integer queryVersionId,
+										@Param(value = "from")Integer currentPageNo,
+										@Param(value = "pageSize")Integer pageSize)throws Exception;
 
 
 	public InsuredInfo getInsuredInfo(@Param(value = "id") Integer id, @Param(value = "buyerName") String buyerName)throws Exception;
