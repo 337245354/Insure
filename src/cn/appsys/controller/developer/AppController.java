@@ -114,7 +114,7 @@ public class AppController {
 		//总页数
 		PageSupport pages = new PageSupport();
 		pages.setCurrentPageNo(currentPageNo);
-		pages.setPageSize(pageSize);//
+		pages.setPageSize(pageSize);
 		pages.setTotalCount(totalCount);
 		int totalPageCount = pages.getTotalPageCount();
 		//控制首页和尾页
@@ -300,7 +300,7 @@ public class AppController {
 		//总页数
 		PageSupport pages = new PageSupport();
 		pages.setCurrentPageNo(currentPageNo);
-		pages.setPageSize(pageSize);//
+		pages.setPageSize(pageSize);
 		pages.setTotalCount(totalCount);
 		int totalPageCount = pages.getTotalPageCount();
 		//控制首页和尾页
