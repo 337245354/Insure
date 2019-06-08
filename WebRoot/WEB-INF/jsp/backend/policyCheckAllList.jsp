@@ -115,8 +115,6 @@
 
                         <li><a class="viewPolicy" insuredInfoid="${insuredInfo.id }" data-toggle="tooltip" data-placement="top" title="" data-original-title="查看保单基础信息以及全部信息">查看</a>
                         </li>
-                        <li><a class="changePolicy" insuredInfoid="${insuredInfo.id}" data-toggle="tooltip" data-placement="top" title="" data-original-title="修改保单基础信息以及全部信息">修改</a>
-                        </li>
                         <li><a class="approvePolicy" insuredInfoid="${insuredInfo.id}"  status="${insuredInfo.policyStatus }"   statusname="${insuredInfo.policyStatusName }"
 							   data-toggle="tooltip" data-placement="top" title="" data-original-title="审核保单基础信息以及全部信息">审核</a>
                         </li>

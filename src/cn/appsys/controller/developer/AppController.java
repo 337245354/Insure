@@ -382,9 +382,9 @@ public class AppController {
 			if(
 					insuredInfoService.add(insuredInfo,insuredCAInfo,insuredGLInfo)
 					){   //insert into DB
-//				session.removeAttribute(Constants.NEW_POLICY);
-//				session.removeAttribute(Constants.CALINE);
-//				session.removeAttribute(Constants.GLLINE);
+				session.removeAttribute(Constants.NEW_POLICY);
+				session.removeAttribute(Constants.CALINE);
+				session.removeAttribute(Constants.GLLINE);
 				return "developer/policyOverview";
 			}
 		} catch (Exception e) {
