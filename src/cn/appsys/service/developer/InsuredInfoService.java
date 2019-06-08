@@ -1,6 +1,6 @@
 package cn.appsys.service.developer;
 
-import cn.appsys.pojo.AppInfo;
+//import cn.appsys.pojo.AppInfo;
 import cn.appsys.pojo.InsuredCAInfo;
 import cn.appsys.pojo.InsuredGLInfo;
 import cn.appsys.pojo.InsuredInfo;

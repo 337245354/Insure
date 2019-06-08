@@ -10,8 +10,8 @@ import cn.appsys.dao.insuredinfo.InsuredInfoMapper;
 import cn.appsys.pojo.*;
 import org.springframework.stereotype.Service;
 
-import cn.appsys.dao.appinfo.AppInfoMapper;
-import cn.appsys.dao.appversion.AppVersionMapper;
+//import cn.appsys.dao.appinfo.AppInfoMapper;
+//import cn.appsys.dao.appversion.AppVersionMapper;
 
 @Service
 public class InsuredInfoServiceImpl implements InsuredInfoService {

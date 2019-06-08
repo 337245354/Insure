@@ -64,7 +64,6 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> 保单管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <%--<li><a href="${pageContext.request.contextPath }/underwriter/backend/app/list">APP审核</a></li>--%>
                       <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/getinsuredinfolist">保单信息列表</a></li>
                       <li><a href="${pageContext.request.contextPath }/underwriter/backend/app/formMain">保单统计</a></li>
                       <li><a href="javascript:;">广告推广</a></li>
@@ -79,7 +78,6 @@
                   <li><a><i class="fa fa-bug"></i> 基础数据维护 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="javascript:;">数据字典</a></li>
-                      <%--<li><a href="javascript:;">APP分类管理</a></li>--%>
                     </ul>
                   </li>
                 </ul>
