@@ -2,7 +2,6 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/cn/appsys/dao/insuredinfo/InsuredInfoMapper.xml" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/doc/appinfodb.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/doc/insureinfodb.sql" dialect="MySQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>

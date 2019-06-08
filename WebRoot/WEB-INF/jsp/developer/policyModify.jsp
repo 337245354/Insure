@@ -285,9 +285,7 @@
     </div>
 </div>
 <%@include file="common/footer.jsp" %>
-<script src="${pageContext.request.contextPath }/statics/localjs/appversionmodify.js"></script>
 <script src="${pageContext.request.contextPath }/statics/localjs/rollpage.js"></script>
-<script src="${pageContext.request.contextPath }/statics/localjs/appinfolist.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/jquery.min.js" charset="UTF-8"></script>
 <script src="${pageContext.request.contextPath }/statics/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath }/statics/js/datepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
